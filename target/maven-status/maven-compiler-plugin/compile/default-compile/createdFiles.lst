@@ -1,0 +1,7 @@
+model\Filme.class
+model\Serie.class
+model\Video.class
+com\mycompany\projeto\Projeto.class
+model\ListaReproducao.class
+model\Usuario.class
+view\Usuario.class
