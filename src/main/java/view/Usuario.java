@@ -37,13 +37,15 @@ public class Usuario extends javax.swing.JFrame {
         senha_txt1 = new javax.swing.JLabel();
         senha2 = new javax.swing.JPasswordField();
         senha = new javax.swing.JPasswordField();
+        login_bt = new javax.swing.JToggleButton();
+        ou_txt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar usuário");
         setBackground(new java.awt.Color(255, 204, 204));
 
         cadastrar_usuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        cadastrar_usuario.setForeground(new java.awt.Color(255, 102, 102));
+        cadastrar_usuario.setForeground(new java.awt.Color(255, 0, 0));
         cadastrar_usuario.setText("Cadastrar");
         cadastrar_usuario.addActionListener(this::cadastrar_usuarioActionPerformed);
 
@@ -67,12 +69,18 @@ public class Usuario extends javax.swing.JFrame {
 
         senha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
+        login_bt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        login_bt.setText("Voltar para Login");
+
+        ou_txt.setForeground(new java.awt.Color(51, 0, 255));
+        ou_txt.setText("OU");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
+                .addGap(107, 107, 107)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(nome_txt)
                     .addComponent(senha_txt)
@@ -80,20 +88,27 @@ public class Usuario extends javax.swing.JFrame {
                     .addComponent(email_txt))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cadastrar_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(nome1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(200, 200, 200))
+                            .addGap(2, 2, 2))
                         .addComponent(senha2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(login_bt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cadastrar_usuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)))
+                .addContainerGap(200, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ou_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(290, 290, 290))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(108, 108, 108)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(email_txt))
@@ -109,9 +124,13 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(senha_txt1)
                     .addComponent(senha2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
+                .addGap(38, 38, 38)
                 .addComponent(cadastrar_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addGap(31, 31, 31)
+                .addComponent(ou_txt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(login_bt, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -150,8 +169,10 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JButton cadastrar_usuario;
     private javax.swing.JTextField email1;
     private javax.swing.JLabel email_txt;
+    private javax.swing.JToggleButton login_bt;
     private javax.swing.JTextField nome1;
     private javax.swing.JLabel nome_txt;
+    private javax.swing.JLabel ou_txt;
     private javax.swing.JPasswordField senha;
     private javax.swing.JPasswordField senha2;
     private javax.swing.JLabel senha_txt;
