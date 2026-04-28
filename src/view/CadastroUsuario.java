@@ -103,6 +103,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         txt_senha = new javax.swing.JTextField();
         lbl_senha = new javax.swing.JLabel();
         bt_cadastro = new javax.swing.JButton();
+        bt_cadastro1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,6 +127,10 @@ public class CadastroUsuario extends javax.swing.JFrame {
         bt_cadastro.setText("Cadastrar");
         bt_cadastro.addActionListener(this::bt_cadastroActionPerformed);
 
+        bt_cadastro1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_cadastro1.setText("Voltar");
+        bt_cadastro1.addActionListener(this::bt_cadastro1ActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -147,7 +152,9 @@ public class CadastroUsuario extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(bt_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(bt_cadastro1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bt_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(21, 21, 21)))))
                 .addContainerGap(170, Short.MAX_VALUE))
         );
@@ -168,7 +175,9 @@ public class CadastroUsuario extends javax.swing.JFrame {
                     .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addComponent(bt_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(bt_cadastro1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
@@ -178,6 +187,11 @@ public class CadastroUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         c.salvarUsuario();
     }//GEN-LAST:event_bt_cadastroActionPerformed
+
+    private void bt_cadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastro1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_bt_cadastro1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,6 +223,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastro;
+    private javax.swing.JButton bt_cadastro1;
     private javax.swing.JLabel lbl_nome;
     private javax.swing.JLabel lbl_senha;
     private javax.swing.JLabel lbl_usuario;

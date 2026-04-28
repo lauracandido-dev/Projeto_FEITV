@@ -59,9 +59,13 @@ public class UsuDAO {
         conn.close();
     }
     
-    
-
-    
-    
-
+    public void remover(Usuario usuario) throws SQLException{
+        String sql = "DELETE FROM login WHERE usuario = ?";
+        
+        PreparedStatement statement = conn.prepareStatement(sql);
+        
+        statement.setString(1, usuario.getUsuario());
+        statement.execute();
+        conn.close();
+    }
 }

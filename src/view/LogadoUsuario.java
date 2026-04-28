@@ -52,11 +52,11 @@ public class LogadoUsuario extends javax.swing.JFrame {
     }
 
     public JButton getBt_exluir() {
-        return bt_exluir;
+        return bt_excluir;
     }
 
     public void setBt_exluir(JButton bt_exluir) {
-        this.bt_exluir = bt_exluir;
+        this.bt_excluir = bt_exluir;
     }
 
     public JButton getBt_listar() {
@@ -112,7 +112,7 @@ public class LogadoUsuario extends javax.swing.JFrame {
         bt_curtirDescurtir = new javax.swing.JButton();
         lbl_escolhasPerfil = new javax.swing.JLabel();
         bt_alterar = new javax.swing.JButton();
-        bt_exluir = new javax.swing.JButton();
+        bt_excluir = new javax.swing.JButton();
         lbl_bemVindo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -142,8 +142,9 @@ public class LogadoUsuario extends javax.swing.JFrame {
         bt_alterar.setText("Alterar Senha");
         bt_alterar.addActionListener(this::bt_alterarActionPerformed);
 
-        bt_exluir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bt_exluir.setText("Excluir Perfil");
+        bt_excluir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_excluir.setText("Excluir Perfil");
+        bt_excluir.addActionListener(this::bt_excluirActionPerformed);
 
         lbl_bemVindo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbl_bemVindo.setText("Bem-Vindo(a)!!");
@@ -160,7 +161,7 @@ public class LogadoUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bt_exluir, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bt_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(143, 143, 143)
@@ -192,8 +193,8 @@ public class LogadoUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bt_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(bt_exluir, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(bt_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -213,9 +214,17 @@ public class LogadoUsuario extends javax.swing.JFrame {
 
     private void bt_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_alterarActionPerformed
         // TODO add your handling code here:
-        //AlteracaoUsuario altUsu = new AlteracaoUsuario(usuario);
-        
+        Usuario usuario = c.chamarAlteracao();
+        AlteracaoUsuario altUsu = new AlteracaoUsuario(usuario);
+        altUsu.setVisible(true);    
     }//GEN-LAST:event_bt_alterarActionPerformed
+
+    private void bt_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluirActionPerformed
+        // TODO add your handling code here:
+        Usuario usuario = c.chamarExclusao();
+        ExclusaoUsuario excUsu = new ExclusaoUsuario(usuario);
+        excUsu.setVisible(true);
+    }//GEN-LAST:event_bt_excluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,7 +257,7 @@ public class LogadoUsuario extends javax.swing.JFrame {
     private javax.swing.JButton bt_alterar;
     private javax.swing.JButton bt_buscar;
     private javax.swing.JButton bt_curtirDescurtir;
-    private javax.swing.JButton bt_exluir;
+    private javax.swing.JButton bt_excluir;
     private javax.swing.JButton bt_listar;
     private javax.swing.JLabel lbl_bemVindo;
     private javax.swing.JLabel lbl_escolhas;

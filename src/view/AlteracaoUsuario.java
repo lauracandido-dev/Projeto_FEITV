@@ -23,6 +23,7 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
      */
     public AlteracaoUsuario(Usuario usuario) {
         initComponents();
+        lbl_nome.setText(usuario.getNome());
         c = new ControleAlteracao(this, usuario);
     }
 
@@ -74,6 +75,7 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
         txt_senhaNova = new javax.swing.JTextField();
         bt_alterar = new javax.swing.JButton();
         bt_voltarLogin = new javax.swing.JButton();
+        lbl_nome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,6 +91,9 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
         bt_voltarLogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_voltarLogin.setText("Voltar");
         bt_voltarLogin.addActionListener(this::bt_voltarLoginActionPerformed);
+
+        lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lbl_nome.setText("NOME");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,13 +112,18 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(83, 83, 83)
                                 .addComponent(lbl_senhaNova))
-                            .addComponent(txt_senhaNova, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txt_senhaNova, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(213, 213, 213)
+                        .addComponent(lbl_nome)))
                 .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(118, 118, 118)
+                .addGap(45, 45, 45)
+                .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addComponent(lbl_senhaNova)
                 .addGap(18, 18, 18)
                 .addComponent(txt_senhaNova, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,6 +178,7 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_alterar;
     private javax.swing.JButton bt_voltarLogin;
+    private javax.swing.JLabel lbl_nome;
     private javax.swing.JLabel lbl_senhaNova;
     private javax.swing.JTextField txt_senhaNova;
     // End of variables declaration//GEN-END:variables

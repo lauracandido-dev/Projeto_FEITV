@@ -20,7 +20,13 @@ public class ControleLogado {
     }
 
 
-    
-    
+    public Usuario chamarAlteracao(){
+        return usuario;
+    }
+
+    public Usuario chamarExclusao(){
+        return usuario;
+        
+    }
     
 }
