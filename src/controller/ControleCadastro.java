@@ -29,10 +29,11 @@ public class ControleCadastro {
         this.tela3 = tela3;
     }
     
-    public void salvarAluno(){
-        String nome = tela3.getTxt_nome().getText();
+    public void salvarUsuario(){
         String usuario = tela3.getTxt_usuario().getText();
         String senha = tela3.getTxt_senha().getText();
+        String nome = tela3.getTxt_nome().getText();
+        
         Usuario user = new Usuario(usuario,senha,nome); //construtor de cadastro
         
         Conexao conexao = new Conexao();

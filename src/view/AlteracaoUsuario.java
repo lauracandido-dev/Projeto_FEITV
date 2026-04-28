@@ -4,9 +4,11 @@
  */
 package view;
 
+import controller.ControleAlteracao;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import model.Usuario;
 
 /**
  *
@@ -19,8 +21,9 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
     /**
      * Creates new form AlteracaoUsuario
      */
-    public AlteracaoUsuario() {
+    public AlteracaoUsuario(Usuario usuario) {
         initComponents();
+        c = new ControleAlteracao(this, usuario);
     }
 
     public JButton getBt_alterar() {
@@ -81,9 +84,11 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
         bt_alterar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_alterar.setForeground(new java.awt.Color(255, 0, 153));
         bt_alterar.setText("Alterar");
+        bt_alterar.addActionListener(this::bt_alterarActionPerformed);
 
         bt_voltarLogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_voltarLogin.setText("Voltar");
+        bt_voltarLogin.addActionListener(this::bt_voltarLoginActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,6 +127,16 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bt_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_alterarActionPerformed
+        // TODO add your handling code here:
+        c.atualizar();
+    }//GEN-LAST:event_bt_alterarActionPerformed
+
+    private void bt_voltarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarLoginActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_bt_voltarLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -147,6 +162,9 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(() -> new AlteracaoUsuario().setVisible(true));
 //    }
 
+    
+    private ControleAlteracao c;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_alterar;
     private javax.swing.JButton bt_voltarLogin;

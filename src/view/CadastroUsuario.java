@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.ControleCadastro;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -22,6 +23,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
     
     public CadastroUsuario() {
         initComponents();
+        c = new ControleCadastro(this);
     }
 
     public JButton getBt_cadastro() {
@@ -122,6 +124,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         bt_cadastro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_cadastro.setForeground(new java.awt.Color(255, 0, 102));
         bt_cadastro.setText("Cadastrar");
+        bt_cadastro.addActionListener(this::bt_cadastroActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,6 +174,11 @@ public class CadastroUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bt_cadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastroActionPerformed
+        // TODO add your handling code here:
+        c.salvarUsuario();
+    }//GEN-LAST:event_bt_cadastroActionPerformed
+
     /**
      * @param args the command line arguments
 //     */
@@ -196,6 +204,8 @@ public class CadastroUsuario extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(() -> new CadastroUsuario().setVisible(true));
 //    }
 
+    
+    private ControleCadastro c;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastro;

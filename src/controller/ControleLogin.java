@@ -38,11 +38,11 @@ public class ControleLogin{
             if(res.next()){
                 JOptionPane.showMessageDialog(tela1, "Login efetuado", "Aviso", 
                                                 JOptionPane.INFORMATION_MESSAGE);
-                String usuarioBanco = res.getString("usuario");
+                String user = res.getString("usuario");
                 String senha = res.getString("senha");
                 String nome = res.getString("nome");
-//                LogadoUsuario tela2 = new LogadoUsuario(new Usuario(usuarioBanco, senha, nome));
-//                tela2.setVisible(true);
+                LogadoUsuario tela2 = new LogadoUsuario(new Usuario(user, senha, nome));
+                tela2.setVisible(true);
                 tela1.setVisible(false);
             } else{;
                 JOptionPane.showMessageDialog(tela1, "Login não efetuado", "Erro", 

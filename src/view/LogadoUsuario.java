@@ -4,6 +4,11 @@
  */
 package view;
 
+import controller.ControleLogado;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import model.Usuario;
+
 /**
  *
  * @author candi
@@ -16,8 +21,74 @@ public class LogadoUsuario extends javax.swing.JFrame {
     /**
      * Creates new form LogadoUsuario
      */
-    public LogadoUsuario() {
+    public LogadoUsuario(Usuario usuario) {
         initComponents();
+        lbl_bemVindo.setText((usuario.getNome()));
+        c = new ControleLogado(this, usuario);       
+    }
+
+    public JButton getBt_alterar() {
+        return bt_alterar;
+    }
+
+    public void setBt_alterar(JButton bt_alterar) {
+        this.bt_alterar = bt_alterar;
+    }
+
+    public JButton getBt_buscar() {
+        return bt_buscar;
+    }
+
+    public void setBt_buscar(JButton bt_buscar) {
+        this.bt_buscar = bt_buscar;
+    }
+
+    public JButton getBt_curtirDescurtir() {
+        return bt_curtirDescurtir;
+    }
+
+    public void setBt_curtirDescurtir(JButton bt_curtirDescurtir) {
+        this.bt_curtirDescurtir = bt_curtirDescurtir;
+    }
+
+    public JButton getBt_exluir() {
+        return bt_exluir;
+    }
+
+    public void setBt_exluir(JButton bt_exluir) {
+        this.bt_exluir = bt_exluir;
+    }
+
+    public JButton getBt_listar() {
+        return bt_listar;
+    }
+
+    public void setBt_listar(JButton bt_listar) {
+        this.bt_listar = bt_listar;
+    }
+
+    public JLabel getLbl_bemVindo() {
+        return lbl_bemVindo;
+    }
+
+    public void setLbl_bemVindo(JLabel lbl_bemVindo) {
+        this.lbl_bemVindo = lbl_bemVindo;
+    }
+
+    public JLabel getLbl_escolhas() {
+        return lbl_escolhas;
+    }
+
+    public void setLbl_escolhas(JLabel lbl_escolhas) {
+        this.lbl_escolhas = lbl_escolhas;
+    }
+
+    public JLabel getLbl_escolhasPerfil() {
+        return lbl_escolhasPerfil;
+    }
+
+    public void setLbl_escolhasPerfil(JLabel lbl_escolhasPerfil) {
+        this.lbl_escolhasPerfil = lbl_escolhasPerfil;
     }
     
     
@@ -35,21 +106,116 @@ public class LogadoUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbl_escolhas = new javax.swing.JLabel();
+        bt_buscar = new javax.swing.JButton();
+        bt_listar = new javax.swing.JButton();
+        bt_curtirDescurtir = new javax.swing.JButton();
+        lbl_escolhasPerfil = new javax.swing.JLabel();
+        bt_alterar = new javax.swing.JButton();
+        bt_exluir = new javax.swing.JButton();
+        lbl_bemVindo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(550, 550));
+
+        lbl_escolhas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_escolhas.setForeground(new java.awt.Color(255, 0, 153));
+        lbl_escolhas.setText("Escolha o que deseja fazer:");
+
+        bt_buscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_buscar.setText("Buscar um vídeo");
+        bt_buscar.addActionListener(this::bt_buscarActionPerformed);
+
+        bt_listar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_listar.setText("Listar Informações de um vídeo");
+        bt_listar.addActionListener(this::bt_listarActionPerformed);
+
+        bt_curtirDescurtir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_curtirDescurtir.setText("Curtir/Descurtir um vídeo");
+        bt_curtirDescurtir.addActionListener(this::bt_curtirDescurtirActionPerformed);
+
+        lbl_escolhasPerfil.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_escolhasPerfil.setForeground(new java.awt.Color(51, 0, 255));
+        lbl_escolhasPerfil.setText("Deseja alterar sua senha ou excluir seu perfil?  Escolha a melhor opção abaixo:");
+
+        bt_alterar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_alterar.setText("Alterar Senha");
+        bt_alterar.addActionListener(this::bt_alterarActionPerformed);
+
+        bt_exluir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_exluir.setText("Excluir Perfil");
+
+        lbl_bemVindo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lbl_bemVindo.setText("Bem-Vindo(a)!!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(lbl_escolhasPerfil))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bt_exluir, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(bt_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbl_escolhas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bt_listar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bt_curtirDescurtir, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(lbl_bemVindo)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(lbl_bemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbl_escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bt_listar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bt_curtirDescurtir, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(lbl_escolhasPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bt_exluir, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_buscarActionPerformed
+
+    private void bt_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_listarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_listarActionPerformed
+
+    private void bt_curtirDescurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_curtirDescurtirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_curtirDescurtirActionPerformed
+
+    private void bt_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_alterarActionPerformed
+        // TODO add your handling code here:
+        //AlteracaoUsuario altUsu = new AlteracaoUsuario(usuario);
+        
+    }//GEN-LAST:event_bt_alterarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -75,7 +241,17 @@ public class LogadoUsuario extends javax.swing.JFrame {
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(() -> new LogadoUsuario().setVisible(true));
 //    }
+    
+    private ControleLogado c;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_alterar;
+    private javax.swing.JButton bt_buscar;
+    private javax.swing.JButton bt_curtirDescurtir;
+    private javax.swing.JButton bt_exluir;
+    private javax.swing.JButton bt_listar;
+    private javax.swing.JLabel lbl_bemVindo;
+    private javax.swing.JLabel lbl_escolhas;
+    private javax.swing.JLabel lbl_escolhasPerfil;
     // End of variables declaration//GEN-END:variables
 }

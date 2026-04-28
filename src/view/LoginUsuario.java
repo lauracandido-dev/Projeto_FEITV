@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.ControleLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -22,14 +23,7 @@ public class LoginUsuario extends javax.swing.JFrame {
     
     public LoginUsuario() {
         initComponents();
-    }
-
-    public JButton getBt_atualizar() {
-        return bt_atualizar;
-    }
-
-    public void setBt_atualizar(JButton bt_atualizar) {
-        this.bt_atualizar = bt_atualizar;
+        c = new ControleLogin(this);
     }
 
     public JButton getBt_cadastrar() {
@@ -46,14 +40,6 @@ public class LoginUsuario extends javax.swing.JFrame {
 
     public void setBt_login(JButton bt_login) {
         this.bt_login = bt_login;
-    }
-
-    public JLabel getLbl_pgtAtualizar() {
-        return lbl_pgtAtualizar;
-    }
-
-    public void setLbl_pgtAtualizar(JLabel lbl_pgtAtualizar) {
-        this.lbl_pgtAtualizar = lbl_pgtAtualizar;
     }
 
     public JLabel getLbl_pgtCadastro() {
@@ -114,8 +100,6 @@ public class LoginUsuario extends javax.swing.JFrame {
         bt_login = new javax.swing.JButton();
         bt_cadastrar = new javax.swing.JButton();
         lbl_pgtCadastro = new javax.swing.JLabel();
-        bt_atualizar = new javax.swing.JButton();
-        lbl_pgtAtualizar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,25 +128,20 @@ public class LoginUsuario extends javax.swing.JFrame {
         lbl_pgtCadastro.setForeground(new java.awt.Color(0, 0, 204));
         lbl_pgtCadastro.setText("Ainda não tem cadastro?");
 
-        bt_atualizar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_atualizar.setText("Atualizar");
-        bt_atualizar.addActionListener(this::bt_atualizarActionPerformed);
-
-        lbl_pgtAtualizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_pgtAtualizar.setForeground(new java.awt.Color(0, 0, 204));
-        lbl_pgtAtualizar.setText("Deseja atualizar sua senha?");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_pgtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(190, 190, 190))
             .addGroup(layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -171,17 +150,7 @@ public class LoginUsuario extends javax.swing.JFrame {
                         .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_pgtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bt_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_pgtAtualizar))
-                .addGap(27, 27, 27))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,19 +163,13 @@ public class LoginUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(bt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_pgtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_pgtAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bt_atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(67, 67, 67))
+                .addGap(37, 37, 37)
+                .addComponent(bt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addComponent(lbl_pgtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();
@@ -220,16 +183,15 @@ public class LoginUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_senhaActionPerformed
 
-    private void bt_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_atualizarActionPerformed
-        // TODO add your handling code here: 
-    }//GEN-LAST:event_bt_atualizarActionPerformed
-
     private void bt_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_loginActionPerformed
         // TODO add your handling code here:
+        c.loginAluno();
     }//GEN-LAST:event_bt_loginActionPerformed
 
     private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
         // TODO add your handling code here:
+        CadastroUsuario cad = new CadastroUsuario();
+        cad.setVisible(true);
     }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     /**
@@ -257,12 +219,11 @@ public class LoginUsuario extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(() -> new LoginUsuario().setVisible(true));
 //    }
     
+    private ControleLogin c;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bt_atualizar;
     private javax.swing.JButton bt_cadastrar;
     private javax.swing.JButton bt_login;
-    private javax.swing.JLabel lbl_pgtAtualizar;
     private javax.swing.JLabel lbl_pgtCadastro;
     private javax.swing.JLabel lbl_senha;
     private javax.swing.JLabel lbl_usuario;

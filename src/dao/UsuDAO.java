@@ -36,9 +36,9 @@ public class UsuDAO {
     
     public void inserir(Usuario usuario) throws SQLException{
         String sql = "INSERT INTO login (usuario, senha, nome) VALUES ('"
-                                 + usuario.getUsuario()    + "', '" 
+                                 + usuario.getUsuario() + "', '" 
                                  + usuario.getSenha() + "', '"
-                                 + usuario.getNome()   + "')";
+                                 + usuario.getNome() + "')";
         
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.execute();
@@ -59,16 +59,7 @@ public class UsuDAO {
         conn.close();
     }
     
-    public void remover(Usuario usuario) throws SQLException{
-        String sql = "DELETE FROM login WHERE usuario = ?";
-        
-        PreparedStatement statement = conn.prepareStatement(sql);
-        
-        statement.setString(1, usuario.getUsuario());
-        statement.execute();
-        
-        conn.close();
-    }
+    
 
     
     
