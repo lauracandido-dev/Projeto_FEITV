@@ -10,6 +10,7 @@ package model;
  */
 public class Usuario {
     private String usuario, senha, nome;
+    private int id;
 
     public Usuario() {
     }
@@ -19,10 +20,25 @@ public class Usuario {
         this.senha = senha;
         this.nome = nome;
     }
+    
+    
 
-    public Usuario(Usuario usuario, String senha, String nome) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Usuario(int id, String usuario, String senha, String nome) {
+        this.id = id;
+        this.usuario = usuario;
+        this.senha = senha;
+        this.nome = nome;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
 
     public String getUsuario() {
         return usuario;

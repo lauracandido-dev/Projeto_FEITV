@@ -22,27 +22,34 @@ import model.Usuario;
 import dao.UsuDAO;
 
 public class ControleAlteracao {
+
     private AlteracaoUsuario tela4;
     private Usuario usuario;
-    
-    public ControleAlteracao(AlteracaoUsuario tela4, Usuario usuario){
+
+    public ControleAlteracao(AlteracaoUsuario tela4, Usuario usuario) {
         this.tela4 = tela4;
         this.usuario = usuario;
     }
-    
-    public void atualizar(){
+
+    public void atualizar() {
         String senhaNova = tela4.getTxt_senhaNova().getText();
-//        Usuario usuario = new Usuario(usuario, senhaNova, "");
+
+        // atualiza o usuário atual
+        usuario.setSenha(senhaNova);
+
         Conexao conexao = new Conexao();
-        try{
+        try {
             Connection conn = conexao.getConnection();
             UsuDAO dao = new UsuDAO(conn);
-            dao.atualizar(usuario);
-            JOptionPane.showMessageDialog(tela4, "Senha de Usuário atualizada com Sucesso!", 
-                                        "Aviso", JOptionPane.INFORMATION_MESSAGE);
-        }catch(SQLException e){
-            JOptionPane.showMessageDialog(tela4, "Falha de conexão!", 
-                                        "Erro", JOptionPane.ERROR_MESSAGE);
+
+            dao.atualizar(usuario); // usa o mesmo usuário
+
+            JOptionPane.showMessageDialog(tela4, "Senha atualizada com sucesso!",
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(tela4, "Falha de conexão!",
+                    "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

@@ -22,7 +22,7 @@ public class UsuDAO {
     }
 
     public ResultSet consultar(Usuario usuario) throws SQLException{
-        String sql = "SELECT * FROM login WHERE usuario = ? and senha = ?";
+        String sql = "SELECT * FROM cadastros WHERE usuario = ? and senha = ?";
         
         PreparedStatement statement = conn.prepareStatement(sql);
         
@@ -35,7 +35,7 @@ public class UsuDAO {
     }
     
     public void inserir(Usuario usuario) throws SQLException{
-        String sql = "INSERT INTO login (usuario, senha, nome) VALUES ('"
+        String sql = "INSERT INTO cadastros (usuario, senha, nome) VALUES ('"
                                  + usuario.getUsuario() + "', '" 
                                  + usuario.getSenha() + "', '"
                                  + usuario.getNome() + "')";
@@ -48,19 +48,19 @@ public class UsuDAO {
 
         
     public void atualizar(Usuario usuario) throws SQLException{
-        String sql = "UPDATE login SET usuario =  ? WHERE senha = ?";
+        String sql = "UPDATE cadastros SET senha =  ? WHERE usuario = ?";
         
         PreparedStatement statement = conn.prepareStatement(sql);
         
-        statement.setString(1, usuario.getUsuario());
-        statement.setString(2, usuario.getSenha());
+        statement.setString(1, usuario.getSenha());
+        statement.setString(2, usuario.getUsuario());
         statement.execute();
         
         conn.close();
     }
     
     public void remover(Usuario usuario) throws SQLException{
-        String sql = "DELETE FROM login WHERE usuario = ?";
+        String sql = "DELETE FROM cadastros WHERE usuario = ?";
         
         PreparedStatement statement = conn.prepareStatement(sql);
         

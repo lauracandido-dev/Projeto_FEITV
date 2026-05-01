@@ -38,6 +38,7 @@ public class ControleLogin{
             if(res.next()){
                 JOptionPane.showMessageDialog(tela1, "Login efetuado", "Aviso", 
                                                 JOptionPane.INFORMATION_MESSAGE);
+                int id = res.getInt("id");
                 String user = res.getString("usuario");
                 String senha = res.getString("senha");
                 String nome = res.getString("nome");

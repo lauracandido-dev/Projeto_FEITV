@@ -3,17 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/controller/ControleAlteracao.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/controller/ControleCadastro.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/controller/ControleLogin.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/controller/ControleLogado.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/dao/UsuDAO.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/model/Usuario.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/AlteracaoUsuario.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/CadastroUsuario.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/LoginUsuario.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/LogadoUsuario.java</file>
             <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/projeto/Projeto.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/controller/ControleBuscar.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/controller/ControleAvaliacao.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/dao/AvaliacoesDAO.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/model/Avaliacoes.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/model/Video.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/dao/UsuDAO.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/LoginUsuario.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/TelaAvaliacoes.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/BuscarVideo.java</file>
         </group>
     </open-files>
 </project-private>

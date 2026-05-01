@@ -23,6 +23,8 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
      */
     public AlteracaoUsuario(Usuario usuario) {
         initComponents();
+        setLocationRelativeTo(null); //aparece no meio
+
         lbl_nome.setText(usuario.getNome());
         c = new ControleAlteracao(this, usuario);
     }

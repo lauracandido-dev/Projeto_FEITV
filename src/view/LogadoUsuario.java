@@ -8,6 +8,8 @@ import controller.ControleLogado;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import model.Usuario;
+import view.BuscarVideo;
+import view.TelaAvaliacoes;
 
 /**
  *
@@ -17,13 +19,18 @@ public class LogadoUsuario extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = 
             java.util.logging.Logger.getLogger(LogadoUsuario.class.getName());
+    private Usuario usuario;
+
 
     /**
      * Creates new form LogadoUsuario
      */
     public LogadoUsuario(Usuario usuario) {
         initComponents();
-        lbl_bemVindo.setText((usuario.getNome()));
+        setLocationRelativeTo(null); //aparece no meio
+        
+        this.usuario = usuario;
+        lbl_nome.setText((usuario.getNome()));
         c = new ControleLogado(this, usuario);       
     }
 
@@ -114,6 +121,7 @@ public class LogadoUsuario extends javax.swing.JFrame {
         bt_alterar = new javax.swing.JButton();
         bt_excluir = new javax.swing.JButton();
         lbl_bemVindo = new javax.swing.JLabel();
+        lbl_nome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(550, 550));
@@ -127,11 +135,11 @@ public class LogadoUsuario extends javax.swing.JFrame {
         bt_buscar.addActionListener(this::bt_buscarActionPerformed);
 
         bt_listar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bt_listar.setText("Listar Informações de um vídeo");
+        bt_listar.setText("Curtir/Descurtir um vídeo");
         bt_listar.addActionListener(this::bt_listarActionPerformed);
 
         bt_curtirDescurtir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bt_curtirDescurtir.setText("Curtir/Descurtir um vídeo");
+        bt_curtirDescurtir.setText("Gerenciar favoritos");
         bt_curtirDescurtir.addActionListener(this::bt_curtirDescurtirActionPerformed);
 
         lbl_escolhasPerfil.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -147,7 +155,11 @@ public class LogadoUsuario extends javax.swing.JFrame {
         bt_excluir.addActionListener(this::bt_excluirActionPerformed);
 
         lbl_bemVindo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lbl_bemVindo.setText("Bem-Vindo(a)!!");
+        lbl_bemVindo.setText("Bem-Vindo(a),");
+
+        lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_nome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_nome.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -172,7 +184,9 @@ public class LogadoUsuario extends javax.swing.JFrame {
                             .addComponent(bt_curtirDescurtir, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(180, 180, 180)
-                        .addComponent(lbl_bemVindo)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lbl_nome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbl_bemVindo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -180,7 +194,9 @@ public class LogadoUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(lbl_bemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(5, 5, 5)
+                .addComponent(lbl_nome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -194,7 +210,7 @@ public class LogadoUsuario extends javax.swing.JFrame {
                 .addComponent(bt_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bt_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,10 +218,15 @@ public class LogadoUsuario extends javax.swing.JFrame {
 
     private void bt_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscarActionPerformed
         // TODO add your handling code here:
+        BuscarVideo tela6 = new BuscarVideo(usuario);
+        tela6.setVisible(true);
+      
     }//GEN-LAST:event_bt_buscarActionPerformed
 
     private void bt_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_listarActionPerformed
         // TODO add your handling code here:
+        TelaAvaliacoes tela7 = new TelaAvaliacoes(usuario);
+        tela7.setVisible(true);
     }//GEN-LAST:event_bt_listarActionPerformed
 
     private void bt_curtirDescurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_curtirDescurtirActionPerformed
@@ -262,5 +283,6 @@ public class LogadoUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_bemVindo;
     private javax.swing.JLabel lbl_escolhas;
     private javax.swing.JLabel lbl_escolhasPerfil;
+    private javax.swing.JLabel lbl_nome;
     // End of variables declaration//GEN-END:variables
 }

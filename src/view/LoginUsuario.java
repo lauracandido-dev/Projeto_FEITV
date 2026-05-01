@@ -23,6 +23,8 @@ public class LoginUsuario extends javax.swing.JFrame {
     
     public LoginUsuario() {
         initComponents();
+        setLocationRelativeTo(null); //aparece no meio
+        
         c = new ControleLogin(this);
     }
 

@@ -23,6 +23,8 @@ public class CadastroUsuario extends javax.swing.JFrame {
     
     public CadastroUsuario() {
         initComponents();
+        setLocationRelativeTo(null); //aparece no meio
+
         c = new ControleCadastro(this);
     }
 
