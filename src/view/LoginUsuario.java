@@ -187,7 +187,7 @@ public class LoginUsuario extends javax.swing.JFrame {
 
     private void bt_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_loginActionPerformed
         // TODO add your handling code here:
-        c.loginAluno();
+        c.loginUsuario();
     }//GEN-LAST:event_bt_loginActionPerformed
 
     private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
@@ -222,6 +222,7 @@ public class LoginUsuario extends javax.swing.JFrame {
 //    }
     
     private ControleLogin c;
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastrar;

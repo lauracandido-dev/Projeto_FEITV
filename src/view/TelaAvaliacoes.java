@@ -21,11 +21,15 @@ public class TelaAvaliacoes extends javax.swing.JFrame {
     /**
      * Creates new form Avaliacoes
      */
+    
+    private Usuario usuario;
+
     public TelaAvaliacoes(Usuario usuario) {
         initComponents();
         setLocationRelativeTo(null); //aparece no meio
-
-        c = new ControleAvaliacao(this, usuario);
+        this.usuario = usuario;
+        
+        c = new ControleAvaliacao(this, usuario); 
 
     }
 
@@ -185,20 +189,23 @@ public class TelaAvaliacoes extends javax.swing.JFrame {
     private void bt_curtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_curtirActionPerformed
         // TODO add your handling code here:
         c.curtir();
+
     }//GEN-LAST:event_bt_curtirActionPerformed
 
     private void bt_descurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_descurtirActionPerformed
         // TODO add your handling code here:
         c.descurtir();
+
     }//GEN-LAST:event_bt_descurtirActionPerformed
 
     private void txt_buscarVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_buscarVideoActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txt_buscarVideoActionPerformed
 
     private void bt_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_buscarActionPerformed
         // TODO add your handling code here:
-        c.buscarIdVideo();
+        c.buscarVideoAvaliar();
     }//GEN-LAST:event_bt_buscarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

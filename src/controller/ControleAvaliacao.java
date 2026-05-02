@@ -8,15 +8,16 @@ package controller;
  *
  * @author candi
  */
+
 import dao.AvaliacoesDAO;
 import dao.Conexao;
-import model.Avaliacoes;
-import model.Usuario;
-import view.TelaAvaliacoes;
-
-import javax.swing.JOptionPane;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import model.Video;
+import view.TelaAvaliacoes;
+import model.Usuario;
 
 public class ControleAvaliacao {
 
@@ -28,7 +29,54 @@ public class ControleAvaliacao {
         this.usuario = usuario;
     }
 
-    public void curtir() {
+
+    
+    public void buscarVideoAvaliar() {
+
+        String nome = tela7.getTxt_buscarVideo().getText(); //pega texto
+
+        if (nome.isEmpty()) { //valida se digitou
+            JOptionPane.showMessageDialog(tela7, "Digite o nome do vídeo!");
+            return;
+        }
+
+        Conexao conexao = new Conexao(); //conexão com banco
+
+        try {
+            Connection conn = conexao.getConnection();
+
+            Video video = new Video(); //cria o obj video
+            video.setNomeVideo(nome);
+
+            AvaliacoesDAO dao = new AvaliacoesDAO(conn); //chama o DAO
+            ResultSet rs = dao.buscarVideoAvaliar(nome);
+
+            if (rs.next()) {
+
+                String nomeVideo = rs.getString("nomeVideo"); //verifica se encontrou
+                String genero = rs.getString("genero");
+                String classificacao = rs.getString("classificacao");
+
+                tela7.getLbl_descricao().setText(
+                    "Nome: " + nomeVideo +
+                    " | Gênero: " + genero +
+                    " | Classificação: " + classificacao
+                );
+
+            } else {
+                JOptionPane.showMessageDialog(tela7, "Vídeo não encontrado!");
+            }
+
+            rs.close();
+            conn.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(tela7, "Erro ao buscar vídeo!");
+        }
+    }
+    
+        public void curtir() {
         avaliar(1);
     }
 
@@ -36,12 +84,13 @@ public class ControleAvaliacao {
         avaliar(-1);
     }
 
+    
     private void avaliar(int valor) {
 
         String nomeVideo = tela7.getTxt_buscarVideo().getText();
 
         if (nomeVideo.isEmpty()) {
-            JOptionPane.showMessageDialog(tela7, "Digite um nome!");
+            JOptionPane.showMessageDialog(tela7, "Digite o nome do vídeo!");
             return;
         }
 
@@ -56,18 +105,17 @@ public class ControleAvaliacao {
                 return;
             }
 
-            Avaliacoes a = new Avaliacoes(
-                    usuario.getId(),
-                    videoId,
-                    valor
-            );
-
             AvaliacoesDAO dao = new AvaliacoesDAO(conn);
-            dao.avaliar(a);
+            dao.avaliar(usuario.getId(), videoId, valor);
 
-            tela7.getLbl_descricao().setText("Você avaliou: " + nomeVideo);
+            // 🎯 mensagem diferente para cada ação
+            if (valor == 1) {
+                tela7.getLbl_descricao().setText("Você curtiu: " + nomeVideo);
+            } else {
+                tela7.getLbl_descricao().setText("Você descurtiu: " + nomeVideo);
+            }
 
-            JOptionPane.showMessageDialog(tela7, "Avaliação salva!");
+            JOptionPane.showMessageDialog(tela7, "Ação registrada!");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -89,9 +137,5 @@ public class ControleAvaliacao {
         }
 
         return -1;
-    }
-
-    public void buscarIdVideo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

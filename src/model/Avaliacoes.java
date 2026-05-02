@@ -10,18 +10,25 @@ package model;
  */
 
 public class Avaliacoes {
-
     private int id;
     private int usuarioId;
-    private int videoId;
-    private int avaliacao; // 1 = curtir, -1 = descurtir
+    private String nomeVideo;
+    private Integer avaliacao; // Usando Integer para permitir null
 
     public Avaliacoes() {}
 
-    public Avaliacoes(int usuarioId, int videoId, int avaliacao) {
+    public Avaliacoes(int usuarioId, String nomeVideo, Integer avaliacao) {
         this.usuarioId = usuarioId;
-        this.videoId = videoId;
+        this.nomeVideo = nomeVideo;
         this.avaliacao = avaliacao;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getUsuarioId() {
@@ -32,19 +39,21 @@ public class Avaliacoes {
         this.usuarioId = usuarioId;
     }
 
-    public int getVideoId() {
-        return videoId;
+    public String getNomeVideo() {
+        return nomeVideo;
     }
 
-    public void setVideoId(int videoId) {
-        this.videoId = videoId;
+    public void setNomeVideo(String nomeVideo) {
+        this.nomeVideo = nomeVideo;
     }
 
-    public int getAvaliacao() {
+    public Integer getAvaliacao() {
         return avaliacao;
     }
 
-    public void setAvaliacao(int avaliacao) {
+    public void setAvaliacao(Integer avaliacao) {
         this.avaliacao = avaliacao;
     }
+ 
+    
 }

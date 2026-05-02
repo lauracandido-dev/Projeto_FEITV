@@ -28,7 +28,7 @@ public class ControleLogin{
         this.tela1 = tela1;
     }
     
-     public void loginAluno(){
+     public void loginUsuario(){
         Usuario usuario = new Usuario(tela1.getTxt_usuario().getText(),tela1.getTxt_senha().getText(), null);
         Conexao conexao = new Conexao();
         try{
@@ -42,7 +42,7 @@ public class ControleLogin{
                 String user = res.getString("usuario");
                 String senha = res.getString("senha");
                 String nome = res.getString("nome");
-                LogadoUsuario tela2 = new LogadoUsuario(new Usuario(user, senha, nome));
+                LogadoUsuario tela2 = new LogadoUsuario(new Usuario(id, user, senha, nome));
                 tela2.setVisible(true);
                 tela1.setVisible(false);
             } else{;
