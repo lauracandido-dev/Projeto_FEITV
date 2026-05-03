@@ -230,7 +230,9 @@ public class LogadoUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_listarActionPerformed
 
     private void bt_curtirDescurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_curtirDescurtirActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:]
+        TelaListaReproducao tela8 = new TelaListaReproducao(usuario);
+        tela8.setVisible(true);
     }//GEN-LAST:event_bt_curtirDescurtirActionPerformed
 
     private void bt_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_alterarActionPerformed
