@@ -8,7 +8,6 @@ package dao;
  *
  * @author candi
  */
-
 import model.ListaReproducao;
 import java.sql.*;
 import java.util.ArrayList;
@@ -34,12 +33,12 @@ public class ListaReproducaoDAO {
         stmt.close();
     }
 
-    public void atualizar(ListaReproducao lista) throws SQLException {
-        String sql = "UPDATE listaReproducao SET nomeLista = ?, descricaoLista = ? WHERE id = ?";
+    public void atualizarNome(int id, String novoNome) throws SQLException {
+        String sql = "UPDATE listaReproducao SET nomeLista = ? WHERE id = ?";
 
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, lista.getNome());
-        stmt.setInt(3, lista.getId());
+        stmt.setString(1, novoNome);
+        stmt.setInt(2, id);
 
         stmt.executeUpdate();
         stmt.close();
@@ -58,7 +57,7 @@ public class ListaReproducaoDAO {
     public List<ListaReproducao> listarPorUsuario(int idUsuario) throws SQLException {
         List<ListaReproducao> listas = new ArrayList<>();
 
-        String sql = "SELECT * FROM listaReproducao WHERE id_usuario = ?";
+        String sql = "SELECT * FROM listaReproducao WHERE usuario_id = ?";
 
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setInt(1, idUsuario);
@@ -70,7 +69,7 @@ public class ListaReproducaoDAO {
                     rs.getInt("id"),
                     rs.getString("nomeLista"),
                     rs.getString("descricaoLista"),
-                    rs.getInt("id_usuario")
+                    rs.getInt("usuario_id")
             );
 
             listas.add(lista);
@@ -81,7 +80,6 @@ public class ListaReproducaoDAO {
 
         return listas;
     }
-    
 
     public ListaReproducao buscarPorId(int id) throws SQLException {
         String sql = "SELECT * FROM listaReproducao WHERE id = ?";
@@ -96,7 +94,7 @@ public class ListaReproducaoDAO {
                     rs.getInt("id"),
                     rs.getString("nomeLista"),
                     rs.getString("descricaoLista"),
-                    rs.getInt("id_usuario")
+                    rs.getInt("usuario_id")
             );
         }
 
@@ -104,5 +102,66 @@ public class ListaReproducaoDAO {
         stmt.close();
 
         return null;
+    }
+
+    public ListaReproducao buscarPorNomeEUsuario(String nome, int usuarioId) throws SQLException {
+        String sql = "SELECT * FROM listaReproducao WHERE nomeLista = ? AND usuario_id = ?";
+
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, nome);
+        stmt.setInt(2, usuarioId);
+
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            return new ListaReproducao(
+                    rs.getInt("id"),
+                    rs.getString("nomeLista"),
+                    rs.getString("descricaoLista"),
+                    rs.getInt("usuario_id")
+            );
+        }
+
+        rs.close();
+        stmt.close();
+
+        return null;
+    }
+
+    public void adicionarVideo(int listaId, int videoId) throws SQLException {
+        String sql = "INSERT INTO listavideo (lista_id, video_id) VALUES (?, ?)";
+
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, listaId);
+        stmt.setInt(2, videoId);
+
+        stmt.executeUpdate();
+        stmt.close();
+    }
+
+    public void removerVideo(int listaId, int videoId) throws SQLException {
+        String sql = "DELETE FROM listavideo WHERE lista_id = ? AND video_id = ?";
+
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, listaId);
+        stmt.setInt(2, videoId);
+
+        stmt.executeUpdate();
+        stmt.close();
+    }
+
+    public int buscarIdPorNome(String nome) throws SQLException {
+        String sql = "SELECT id FROM videos WHERE \"nomeVideo\" ILIKE ?";
+
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, nome);
+
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            return rs.getInt("id");
+        }
+
+        return -1;
     }
 }

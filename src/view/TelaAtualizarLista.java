@@ -4,6 +4,12 @@
  */
 package view;
 
+import controller.ControleEditarLista;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import model.Usuario;
+
 /**
  *
  * @author candi
@@ -15,9 +21,66 @@ public class TelaAtualizarLista extends javax.swing.JFrame {
     /**
      * Creates new form TelaAtualizarLista
      */
-    public TelaAtualizarLista() {
+    
+    private Usuario usuario;
+    
+    public TelaAtualizarLista(Usuario usuario) {
         initComponents();
+        setLocationRelativeTo(null);
+        c = new ControleEditarLista(this, usuario);
     }
+
+    public JButton getBt_alterarNome() {
+        return bt_alterarNome;
+    }
+
+    public void setBt_alterarNome(JButton bt_alterarNome) {
+        this.bt_alterarNome = bt_alterarNome;
+    }
+
+    public JButton getBt_voltar() {
+        return bt_voltar;
+    }
+
+    public void setBt_voltar(JButton bt_voltar) {
+        this.bt_voltar = bt_voltar;
+    }
+
+    public JLabel getLbl_antigoNome() {
+        return lbl_antigoNome;
+    }
+
+    public void setLbl_antigoNome(JLabel lbl_antigoNome) {
+        this.lbl_antigoNome = lbl_antigoNome;
+    }
+
+    public JLabel getLbl_novoNome() {
+        return lbl_novoNome;
+    }
+
+    public void setLbl_novoNome(JLabel lbl_novoNome) {
+        this.lbl_novoNome = lbl_novoNome;
+    }
+
+    public JTextField getTxt_antigoNome() {
+        return txt_antigoNome;
+    }
+
+    public void setTxt_antigoNome(JTextField txt_antigoNome) {
+        this.txt_antigoNome = txt_antigoNome;
+    }
+
+    public JTextField getTxt_novoNome() {
+        return txt_novoNome;
+    }
+
+    public void setTxt_novoNome(JTextField txt_novoNome) {
+        this.txt_novoNome = txt_novoNome;
+    }
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,9 +94,9 @@ public class TelaAtualizarLista extends javax.swing.JFrame {
         lbl_novoNome = new javax.swing.JLabel();
         txt_novoNome = new javax.swing.JTextField();
         bt_alterarNome = new javax.swing.JButton();
-        bt_alterarNome1 = new javax.swing.JButton();
-        lbl_novoNome1 = new javax.swing.JLabel();
-        txt_novoNome1 = new javax.swing.JTextField();
+        bt_voltar = new javax.swing.JButton();
+        lbl_antigoNome = new javax.swing.JLabel();
+        txt_antigoNome = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,13 +107,15 @@ public class TelaAtualizarLista extends javax.swing.JFrame {
         bt_alterarNome.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_alterarNome.setForeground(new java.awt.Color(255, 0, 102));
         bt_alterarNome.setText("Alterar nome da lista");
+        bt_alterarNome.addActionListener(this::bt_alterarNomeActionPerformed);
 
-        bt_alterarNome1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_alterarNome1.setText("Voltar");
+        bt_voltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_voltar.setText("Voltar");
+        bt_voltar.addActionListener(this::bt_voltarActionPerformed);
 
-        lbl_novoNome1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_novoNome1.setForeground(new java.awt.Color(51, 0, 255));
-        lbl_novoNome1.setText("Informe o nome da lista que deseja alterar o nome: ");
+        lbl_antigoNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_antigoNome.setForeground(new java.awt.Color(51, 0, 255));
+        lbl_antigoNome.setText("Informe o nome da lista que deseja alterar o nome: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,23 +127,23 @@ public class TelaAtualizarLista extends javax.swing.JFrame {
                         .addGap(166, 166, 166)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(bt_alterarNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bt_alterarNome1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(bt_voltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txt_novoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_novoNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_antigoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_novoNome)
-                            .addComponent(lbl_novoNome1))))
+                            .addComponent(lbl_antigoNome))))
                 .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(96, 96, 96)
-                .addComponent(lbl_novoNome1)
+                .addComponent(lbl_antigoNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txt_novoNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_antigoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(lbl_novoNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -86,12 +151,22 @@ public class TelaAtualizarLista extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(bt_alterarNome, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(bt_alterarNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(102, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_alterarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_alterarNomeActionPerformed
+        // TODO add your handling code here:
+        c.alterarNomeLista();
+    }//GEN-LAST:event_bt_alterarNomeActionPerformed
+
+    private void bt_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_bt_voltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,12 +193,14 @@ public class TelaAtualizarLista extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(() -> new TelaAtualizarLista().setVisible(true));
 //    }
 //
+    
+    private ControleEditarLista c;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_alterarNome;
-    private javax.swing.JButton bt_alterarNome1;
+    private javax.swing.JButton bt_voltar;
+    private javax.swing.JLabel lbl_antigoNome;
     private javax.swing.JLabel lbl_novoNome;
-    private javax.swing.JLabel lbl_novoNome1;
+    private javax.swing.JTextField txt_antigoNome;
     private javax.swing.JTextField txt_novoNome;
-    private javax.swing.JTextField txt_novoNome1;
     // End of variables declaration//GEN-END:variables
 }

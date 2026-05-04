@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import model.Usuario;
 import view.CriarLista;
 /**
@@ -19,8 +21,68 @@ public class TelaListaReproducao extends javax.swing.JFrame {
      */
     public TelaListaReproducao(Usuario usuario) {
         initComponents();
+        setLocationRelativeTo(null);
         this.usuario = usuario;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public JButton getBt_criarLista() {
+        return bt_criarLista;
+    }
+
+    public void setBt_criarLista(JButton bt_criarLista) {
+        this.bt_criarLista = bt_criarLista;
+    }
+
+    public JButton getBt_editarLista() {
+        return bt_editarLista;
+    }
+
+    public void setBt_editarLista(JButton bt_editarLista) {
+        this.bt_editarLista = bt_editarLista;
+    }
+
+    public JButton getBt_excluirLista() {
+        return bt_excluirLista;
+    }
+
+    public void setBt_excluirLista(JButton bt_excluirLista) {
+        this.bt_excluirLista = bt_excluirLista;
+    }
+
+    public JButton getBt_gerenciarVideos() {
+        return bt_gerenciarVideos;
+    }
+
+    public void setBt_gerenciarVideos(JButton bt_gerenciarVideos) {
+        this.bt_gerenciarVideos = bt_gerenciarVideos;
+    }
+
+    public JButton getBt_voltar() {
+        return bt_voltar;
+    }
+
+    public void setBt_voltar(JButton bt_voltar) {
+        this.bt_voltar = bt_voltar;
+    }
+
+    public JLabel getLbl_escolhaLista() {
+        return lbl_escolhaLista;
+    }
+
+    public void setLbl_escolhaLista(JLabel lbl_escolhaLista) {
+        this.lbl_escolhaLista = lbl_escolhaLista;
+    }
+
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,6 +98,7 @@ public class TelaListaReproducao extends javax.swing.JFrame {
         bt_editarLista = new javax.swing.JButton();
         bt_gerenciarVideos = new javax.swing.JButton();
         bt_excluirLista = new javax.swing.JButton();
+        bt_voltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Listas de Reprodução");
@@ -50,6 +113,7 @@ public class TelaListaReproducao extends javax.swing.JFrame {
 
         bt_editarLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_editarLista.setText("Editar sua Lista de Reprodução");
+        bt_editarLista.addActionListener(this::bt_editarListaActionPerformed);
 
         bt_gerenciarVideos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_gerenciarVideos.setText("Adicionar/remover vídeo");
@@ -58,6 +122,10 @@ public class TelaListaReproducao extends javax.swing.JFrame {
         bt_excluirLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_excluirLista.setText("Excluir uma Lista de Reprodução");
         bt_excluirLista.addActionListener(this::bt_excluirListaActionPerformed);
+
+        bt_voltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_voltar.setText("Voltar");
+        bt_voltar.addActionListener(this::bt_voltarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,7 +139,8 @@ public class TelaListaReproducao extends javax.swing.JFrame {
                             .addComponent(bt_editarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bt_criarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bt_gerenciarVideos, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bt_excluirLista, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(bt_excluirLista, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(lbl_escolhaLista)))
@@ -90,7 +159,9 @@ public class TelaListaReproducao extends javax.swing.JFrame {
                 .addComponent(bt_gerenciarVideos, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bt_excluirLista, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,10 +169,14 @@ public class TelaListaReproducao extends javax.swing.JFrame {
 
     private void bt_gerenciarVideosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_gerenciarVideosActionPerformed
         // TODO add your handling code here:
+        TelaGerenciarListas tela12 = new TelaGerenciarListas(usuario);
+        tela12.setVisible(true);
     }//GEN-LAST:event_bt_gerenciarVideosActionPerformed
 
     private void bt_excluirListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluirListaActionPerformed
         // TODO add your handling code here:
+        TelaExcluirLista tela11 = new TelaExcluirLista(usuario);
+        tela11.setVisible(true);
     }//GEN-LAST:event_bt_excluirListaActionPerformed
 
     private void bt_criarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_criarListaActionPerformed
@@ -109,6 +184,17 @@ public class TelaListaReproducao extends javax.swing.JFrame {
         CriarLista tela8 = new CriarLista(usuario);
         tela8.setVisible(true);
     }//GEN-LAST:event_bt_criarListaActionPerformed
+
+    private void bt_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_bt_voltarActionPerformed
+
+    private void bt_editarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_editarListaActionPerformed
+        // TODO add your handling code here:
+        TelaAtualizarLista tela10 = new TelaAtualizarLista(usuario);
+        tela10.setVisible(true);
+    }//GEN-LAST:event_bt_editarListaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,6 +226,7 @@ public class TelaListaReproducao extends javax.swing.JFrame {
     private javax.swing.JButton bt_editarLista;
     private javax.swing.JButton bt_excluirLista;
     private javax.swing.JButton bt_gerenciarVideos;
+    private javax.swing.JButton bt_voltar;
     private javax.swing.JLabel lbl_escolhaLista;
     // End of variables declaration//GEN-END:variables
 }

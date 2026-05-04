@@ -8,6 +8,7 @@ package controller;
  *
  * @author candi
  */
+import dao.Conexao;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -15,6 +16,7 @@ import model.Video;
 import dao.VideoDAO;
 import model.Usuario;
 import view.BuscarVideo;
+import java.sql.Connection;
 
 public class ControleBuscar {
 
@@ -24,10 +26,15 @@ public class ControleBuscar {
 
     public ControleBuscar(BuscarVideo view) {
         this.view = view;
-        this.dao = new VideoDAO();
-    }
-    
 
+        try {
+            Connection conn = new Conexao().getConnection();
+            this.dao = new VideoDAO(conn);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(view, "Erro ao conectar com o banco!");
+        }
+    }
 
     public void acaoPesquisar() {
         String termo = view.getTxt_buscar().getText();

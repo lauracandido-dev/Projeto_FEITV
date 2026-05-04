@@ -121,6 +121,7 @@ public class CriarLista extends javax.swing.JFrame {
 
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_voltar.setText("Voltar");
+        bt_voltar.addActionListener(this::bt_voltarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -173,6 +174,12 @@ public class CriarLista extends javax.swing.JFrame {
         // TODO add your handling code here:
         c.criarLista();
     }//GEN-LAST:event_bt_criarListaActionPerformed
+
+    private void bt_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+
+    }//GEN-LAST:event_bt_voltarActionPerformed
 
     /**
      * @param args the command line arguments

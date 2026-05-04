@@ -4,20 +4,63 @@
  */
 package view;
 
+import controller.ControleExcluirLista;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import model.Usuario;
+
 /**
  *
  * @author candi
  */
-public class TelaDeletarLista extends javax.swing.JFrame {
+public class TelaExcluirLista extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaDeletarLista.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaExcluirLista.class.getName());
 
+    private Usuario usuario;
     /**
      * Creates new form TelaDeletarLista
      */
-    public TelaDeletarLista() {
+    public TelaExcluirLista(Usuario usuario) {
         initComponents();
+        setLocationRelativeTo(null);
+        c = new ControleExcluirLista(this, usuario);
     }
+
+    public JButton getBt_deletarLista() {
+        return bt_deletarLista;
+    }
+
+    public void setBt_deletarLista(JButton bt_deletarLista) {
+        this.bt_deletarLista = bt_deletarLista;
+    }
+
+    public JButton getBt_voltarLista() {
+        return bt_voltarLista;
+    }
+
+    public void setBt_voltarLista(JButton bt_voltarLista) {
+        this.bt_voltarLista = bt_voltarLista;
+    }
+
+    public JLabel getLbl_nomeListaExcluir() {
+        return lbl_nomeListaExcluir;
+    }
+
+    public void setLbl_nomeListaExcluir(JLabel lbl_nomeListaExcluir) {
+        this.lbl_nomeListaExcluir = lbl_nomeListaExcluir;
+    }
+
+    public JTextField getTxt_listaExcluir() {
+        return txt_listaExcluir;
+    }
+
+    public void setTxt_listaExcluir(JTextField txt_listaExcluir) {
+        this.txt_listaExcluir = txt_listaExcluir;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,8 +73,6 @@ public class TelaDeletarLista extends javax.swing.JFrame {
 
         lbl_nomeListaExcluir = new javax.swing.JLabel();
         txt_listaExcluir = new javax.swing.JTextField();
-        bt_buscarLista = new javax.swing.JButton();
-        lbl_descLista = new javax.swing.JLabel();
         bt_deletarLista = new javax.swing.JButton();
         bt_voltarLista = new javax.swing.JButton();
 
@@ -41,18 +82,14 @@ public class TelaDeletarLista extends javax.swing.JFrame {
         lbl_nomeListaExcluir.setForeground(new java.awt.Color(51, 0, 255));
         lbl_nomeListaExcluir.setText("Insira o nome da lista que você deseja excluir:");
 
-        bt_buscarLista.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bt_buscarLista.setText("Buscar");
-
-        lbl_descLista.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_descLista.setText(" ");
-
         bt_deletarLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_deletarLista.setForeground(new java.awt.Color(255, 0, 51));
         bt_deletarLista.setText("Deletar Lista");
+        bt_deletarLista.addActionListener(this::bt_deletarListaActionPerformed);
 
         bt_voltarLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bt_voltarLista.setText("Voltar");
+        bt_voltarLista.addActionListener(this::bt_voltarListaActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -64,18 +101,13 @@ public class TelaDeletarLista extends javax.swing.JFrame {
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_nomeListaExcluir)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lbl_descLista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txt_listaExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(bt_buscarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txt_listaExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
+                        .addGap(142, 142, 142)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bt_voltarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bt_deletarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,20 +115,26 @@ public class TelaDeletarLista extends javax.swing.JFrame {
                 .addGap(108, 108, 108)
                 .addComponent(lbl_nomeListaExcluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(bt_buscarLista, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(txt_listaExcluir))
-                .addGap(31, 31, 31)
-                .addComponent(lbl_descLista, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addComponent(txt_listaExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
                 .addComponent(bt_deletarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(bt_voltarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_deletarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_deletarListaActionPerformed
+        // TODO add your handling code here:
+        c.excluirLista();
+    }//GEN-LAST:event_bt_deletarListaActionPerformed
+
+    private void bt_voltarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarListaActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_bt_voltarListaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,11 +161,11 @@ public class TelaDeletarLista extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(() -> new TelaDeletarLista().setVisible(true));
 //    }
 //
+    private ControleExcluirLista c;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bt_buscarLista;
     private javax.swing.JButton bt_deletarLista;
     private javax.swing.JButton bt_voltarLista;
-    private javax.swing.JLabel lbl_descLista;
     private javax.swing.JLabel lbl_nomeListaExcluir;
     private javax.swing.JTextField txt_listaExcluir;
     // End of variables declaration//GEN-END:variables
