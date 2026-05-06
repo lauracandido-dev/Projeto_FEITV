@@ -23,6 +23,7 @@ public class CriarLista extends javax.swing.JFrame {
      */
     public CriarLista(Usuario usuario) {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
         setLocationRelativeTo(null);
         
         this.c = new ControleCriarLista(this, usuario);
@@ -102,26 +103,35 @@ public class CriarLista extends javax.swing.JFrame {
         lbl_descricaoLista = new javax.swing.JLabel();
         bt_criarLista = new javax.swing.JButton();
         bt_voltar = new javax.swing.JButton();
+        lbl_criarLista1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Criar Listas");
 
-        lbl_criarLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl_criarLista.setForeground(new java.awt.Color(255, 0, 102));
-        lbl_criarLista.setText("Insira as informações abaixo para criar a lista:");
+        lbl_criarLista.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        lbl_criarLista.setForeground(new java.awt.Color(102, 0, 102));
+        lbl_criarLista.setText("Aqui você deixa seus conteúdos salvos em listas personalizadas");
 
-        lbl_nomeLista.setForeground(new java.awt.Color(0, 0, 255));
+        lbl_nomeLista.setForeground(new java.awt.Color(102, 0, 102));
         lbl_nomeLista.setText("Adicione o nome da lista:");
 
-        lbl_descricaoLista.setForeground(new java.awt.Color(0, 0, 255));
-        lbl_descricaoLista.setText("Adicione uma descrição:");
+        lbl_descricaoLista.setForeground(new java.awt.Color(102, 0, 102));
+        lbl_descricaoLista.setText("Adicione uma descrição para sua lista:");
 
+        bt_criarLista.setBackground(new java.awt.Color(102, 0, 102));
         bt_criarLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_criarLista.setForeground(new java.awt.Color(255, 255, 255));
         bt_criarLista.setText("Criar Lista");
         bt_criarLista.addActionListener(this::bt_criarListaActionPerformed);
 
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_voltar.setForeground(new java.awt.Color(102, 0, 102));
         bt_voltar.setText("Voltar");
         bt_voltar.addActionListener(this::bt_voltarActionPerformed);
+
+        lbl_criarLista1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_criarLista1.setForeground(new java.awt.Color(102, 0, 102));
+        lbl_criarLista1.setText("Siga as instruções abaixo:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,29 +140,34 @@ public class CriarLista extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
+                        .addGap(43, 43, 43)
                         .addComponent(lbl_criarLista))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
+                        .addGap(128, 128, 128)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lbl_nomeLista)
                             .addComponent(txt_nomeLista, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_descricaoLista)
                             .addComponent(txt_descricaoLista, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
-                                .addComponent(bt_criarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(92, Short.MAX_VALUE))
+                                .addComponent(bt_criarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(lbl_criarLista1)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(35, 35, 35)
                 .addComponent(lbl_criarLista)
-                .addGap(57, 57, 57)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbl_criarLista1)
+                .addGap(35, 35, 35)
                 .addComponent(lbl_nomeLista)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_nomeLista, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,7 +179,7 @@ public class CriarLista extends javax.swing.JFrame {
                 .addComponent(bt_criarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+                .addGap(49, 49, 49))
         );
 
         pack();
@@ -212,6 +227,7 @@ public class CriarLista extends javax.swing.JFrame {
     private javax.swing.JButton bt_criarLista;
     private javax.swing.JButton bt_voltar;
     private javax.swing.JLabel lbl_criarLista;
+    private javax.swing.JLabel lbl_criarLista1;
     private javax.swing.JLabel lbl_descricaoLista;
     private javax.swing.JLabel lbl_nomeLista;
     private javax.swing.JTextField txt_descricaoLista;

@@ -14,6 +14,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.Filme;
+import model.Serie;
 
 import model.Video;
 
@@ -29,7 +31,7 @@ public class VideoDAO {
         String sql = "SELECT id FROM videos WHERE \"nomeVideo\" ILIKE ?";
 
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, nome);
+        stmt.setString(1, "%" + nome + "%"); //procura o video mesmo incompleto
 
         ResultSet rs = stmt.executeQuery();
 
@@ -44,18 +46,39 @@ public class VideoDAO {
         String sql = "SELECT * FROM videos WHERE \"nomeVideo\" ILIKE ?";
 
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, nome);
+        stmt.setString(1, "%" + nome + "%");
 
         ResultSet rs = stmt.executeQuery();
 
         if (rs.next()) {
-            Video v = new Video();
-            v.setId(rs.getInt("id"));
-            v.setNomeVideo(rs.getString("nomeVideo"));
-            v.setGenero(rs.getString("genero"));
-            v.setClassificacao(rs.getString("classificacao"));
 
-            return v;
+            String tipo = rs.getString("tipo");
+
+            if (tipo.equalsIgnoreCase("filme")) {
+
+                Filme f = new Filme();
+                f.setId(rs.getInt("id"));
+                f.setNomeVideo(rs.getString("nomeVideo"));
+                f.setGenero(rs.getString("genero"));
+                f.setClassificacao(rs.getString("classificacao"));
+                f.setSinopse(rs.getString("sinopse"));
+                f.setDuracao(rs.getInt("duracao"));
+
+                return f;
+
+            } else if (tipo.equalsIgnoreCase("serie")) {
+
+                Serie s = new Serie();
+                s.setId(rs.getInt("id"));
+                s.setNomeVideo(rs.getString("nomeVideo"));
+                s.setGenero(rs.getString("genero"));
+                s.setClassificacao(rs.getString("classificacao"));
+                s.setSinopse(rs.getString("sinopse"));
+                s.setTemporadas(rs.getInt("temporada"));
+                s.setEpisodios(rs.getInt("episodios"));
+
+                return s;
+            }
         }
 
         return null;
@@ -69,23 +92,38 @@ public class VideoDAO {
         Connection conn = conexao.getConnection();
 
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, termo + "%");
+        stmt.setString(1, "%" + termo + "%");
 
         ResultSet rs = stmt.executeQuery();
 
         while (rs.next()) {
-            Video v = new Video();
-            v.setNomeVideo(rs.getString("nomeVideo"));
-            v.setGenero(rs.getString("genero"));
-            v.setClassificacao(rs.getString("classificacao"));
-            v.setSinopse(rs.getString("sinopse"));
-            lista.add(v);
+
+            String tipo = rs.getString("tipo");
+
+            if (tipo.equalsIgnoreCase("filme")) {
+
+                Filme f = new Filme();
+                f.setNomeVideo(rs.getString("nomeVideo"));
+                f.setGenero(rs.getString("genero"));
+                f.setClassificacao(rs.getString("classificacao"));
+                f.setSinopse(rs.getString("sinopse"));
+                f.setDuracao(rs.getInt("duracao"));
+
+                lista.add(f);
+
+            } else {
+
+                Serie s = new Serie();
+                s.setNomeVideo(rs.getString("nomeVideo"));
+                s.setGenero(rs.getString("genero"));
+                s.setClassificacao(rs.getString("classificacao"));
+                s.setSinopse(rs.getString("sinopse"));
+                s.setTemporadas(rs.getInt("temporada"));
+                s.setEpisodios(rs.getInt("episodios"));
+
+                lista.add(s);
+            }
         }
-
-        rs.close();
-        stmt.close();
-        conn.close();
-
         return lista;
     }
 }

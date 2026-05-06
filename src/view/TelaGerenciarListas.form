@@ -28,31 +28,33 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lbl_classificacao" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbl_genero" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbl_nome" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="lbl_escolhaLista1" min="-2" max="-2" attributes="0"/>
                           <Component id="txt_nomeLista" min="-2" pref="451" max="-2" attributes="0"/>
                           <Component id="lbl_escolhaLista" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbl_resultado" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                      <Component id="bt_adicionar" min="-2" pref="123" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="bt_remover" min="-2" pref="123" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txt_nomeVideo" min="-2" pref="368" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="txt_nomeVideo" min="-2" pref="368" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="bt_buscarVideo" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="lbl_resultado" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbl_nome" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbl_genero" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbl_classificacao" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                      <Component id="bt_adicionar" min="-2" pref="123" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                      <Component id="bt_remover" min="-2" pref="123" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
                       <Component id="bt_voltar" min="-2" pref="245" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -63,7 +65,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lbl_escolhaLista" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="txt_nomeLista" min="-2" pref="41" max="-2" attributes="0"/>
@@ -72,7 +76,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="bt_buscarVideo" max="32767" attributes="0"/>
-                  <Component id="txt_nomeVideo" pref="41" max="32767" attributes="0"/>
+                  <Component id="txt_nomeVideo" min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lbl_resultado" min="-2" max="-2" attributes="0"/>
@@ -87,9 +91,9 @@
                   <Component id="bt_adicionar" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="bt_remover" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="bt_voltar" min="-2" pref="48" max="-2" attributes="0"/>
-              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <EmptySpace pref="36" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -101,7 +105,7 @@
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="0" red="33" type="rgb"/>
+          <Color blue="66" green="0" red="66" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Escolha a lista que deseja adicionar ou remover o v&#xed;deo:"/>
       </Properties>
@@ -114,7 +118,7 @@
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="0" red="33" type="rgb"/>
+          <Color blue="66" green="0" red="66" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Digite o nome do v&#xed;deo que deseja adicionar:"/>
       </Properties>
@@ -123,8 +127,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="bt_buscarVideo">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="66" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
@@ -135,39 +145,42 @@
     <Component class="javax.swing.JLabel" name="lbl_resultado">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Resultado:"/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_nome">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nome: "/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_genero">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="G&#xea;nero:"/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_classificacao">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Classifica&#xe7;&#xe3;o:"/>
+        <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="bt_adicionar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="ff" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Adicionar"/>
       </Properties>
@@ -180,6 +193,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Remover"/>
       </Properties>
       <Events>
@@ -191,11 +207,25 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="66" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_voltarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="2"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="66" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Seu conte&#xfa;do, do seu jeito"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -56,7 +56,9 @@ public class ControleExcluirLista {
                     "Tem certeza que deseja excluir a lista '" + nomeLista + "'?",
                     "Confirmação",
                     JOptionPane.YES_NO_OPTION
+                    
             );
+            tela11.dispose();
 
             if (resposta != JOptionPane.YES_OPTION) {
                 return; // cancela

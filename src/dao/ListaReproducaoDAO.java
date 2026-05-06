@@ -21,6 +21,7 @@ public class ListaReproducaoDAO {
         this.conn = conn;
     }
 
+    //adicionar lista
     public void inserir(ListaReproducao lista) throws SQLException {
         String sql = "INSERT INTO listaReproducao (nomeLista, descricaoLista, usuario_id) VALUES (?, ?, ?)";
 
@@ -33,6 +34,7 @@ public class ListaReproducaoDAO {
         stmt.close();
     }
 
+    //atualizar lista
     public void atualizarNome(int id, String novoNome) throws SQLException {
         String sql = "UPDATE listaReproducao SET nomeLista = ? WHERE id = ?";
 
@@ -44,6 +46,8 @@ public class ListaReproducaoDAO {
         stmt.close();
     }
 
+    
+    //excluir lista
     public void excluir(int id) throws SQLException {
         String sql = "DELETE FROM listaReproducao WHERE id = ?";
 
@@ -54,33 +58,8 @@ public class ListaReproducaoDAO {
         stmt.close();
     }
 
-    public List<ListaReproducao> listarPorUsuario(int idUsuario) throws SQLException {
-        List<ListaReproducao> listas = new ArrayList<>();
 
-        String sql = "SELECT * FROM listaReproducao WHERE usuario_id = ?";
-
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, idUsuario);
-
-        ResultSet rs = stmt.executeQuery();
-
-        while (rs.next()) {
-            ListaReproducao lista = new ListaReproducao(
-                    rs.getInt("id"),
-                    rs.getString("nomeLista"),
-                    rs.getString("descricaoLista"),
-                    rs.getInt("usuario_id")
-            );
-
-            listas.add(lista);
-        }
-
-        rs.close();
-        stmt.close();
-
-        return listas;
-    }
-
+    //procurar id da lista
     public ListaReproducao buscarPorId(int id) throws SQLException {
         String sql = "SELECT * FROM listaReproducao WHERE id = ?";
 
@@ -104,6 +83,7 @@ public class ListaReproducaoDAO {
         return null;
     }
 
+    //procura lista pelo nome e usuario
     public ListaReproducao buscarPorNomeEUsuario(String nome, int usuarioId) throws SQLException {
         String sql = "SELECT * FROM listaReproducao WHERE nomeLista = ? AND usuario_id = ?";
 
@@ -128,6 +108,7 @@ public class ListaReproducaoDAO {
         return null;
     }
 
+    //adiciona video na lista
     public void adicionarVideo(int listaId, int videoId) throws SQLException {
         String sql = "INSERT INTO listavideo (lista_id, video_id) VALUES (?, ?)";
 
@@ -139,6 +120,7 @@ public class ListaReproducaoDAO {
         stmt.close();
     }
 
+    //remove video da lista
     public void removerVideo(int listaId, int videoId) throws SQLException {
         String sql = "DELETE FROM listavideo WHERE lista_id = ? AND video_id = ?";
 
@@ -150,6 +132,7 @@ public class ListaReproducaoDAO {
         stmt.close();
     }
 
+    //busca id do video pelo nome dele 
     public int buscarIdPorNome(String nome) throws SQLException {
         String sql = "SELECT id FROM videos WHERE \"nomeVideo\" ILIKE ?";
 

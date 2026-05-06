@@ -25,6 +25,8 @@ public class TelaGerenciarListas extends javax.swing.JFrame {
     public TelaGerenciarListas(Usuario usuario) {
         initComponents();
         setLocationRelativeTo(null);
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
+
         c = new ControleGerenciarListas(this, usuario);
     }
 
@@ -147,45 +149,55 @@ public class TelaGerenciarListas extends javax.swing.JFrame {
         bt_adicionar = new javax.swing.JButton();
         bt_remover = new javax.swing.JButton();
         bt_voltar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Adicionar/remover vídeos da lista");
 
         lbl_escolhaLista.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_escolhaLista.setForeground(new java.awt.Color(51, 0, 255));
+        lbl_escolhaLista.setForeground(new java.awt.Color(102, 0, 102));
         lbl_escolhaLista.setText("Escolha a lista que deseja adicionar ou remover o vídeo:");
 
         lbl_escolhaLista1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_escolhaLista1.setForeground(new java.awt.Color(51, 0, 255));
+        lbl_escolhaLista1.setForeground(new java.awt.Color(102, 0, 102));
         lbl_escolhaLista1.setText("Digite o nome do vídeo que deseja adicionar:");
 
+        bt_buscarVideo.setBackground(new java.awt.Color(102, 0, 102));
         bt_buscarVideo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_buscarVideo.setForeground(new java.awt.Color(255, 255, 255));
         bt_buscarVideo.setText("Buscar");
         bt_buscarVideo.addActionListener(this::bt_buscarVideoActionPerformed);
 
-        lbl_resultado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_resultado.setText("Resultado:");
+        lbl_resultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_resultado.setText(" ");
 
-        lbl_nome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_nome.setText("Nome: ");
+        lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_nome.setText(" ");
 
-        lbl_genero.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_genero.setText("Gênero:");
+        lbl_genero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_genero.setText(" ");
 
-        lbl_classificacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_classificacao.setText("Classificação:");
+        lbl_classificacao.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_classificacao.setText(" ");
 
         bt_adicionar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_adicionar.setForeground(new java.awt.Color(0, 255, 0));
         bt_adicionar.setText("Adicionar");
         bt_adicionar.addActionListener(this::bt_adicionarActionPerformed);
 
         bt_remover.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_remover.setForeground(new java.awt.Color(255, 0, 0));
         bt_remover.setText("Remover");
         bt_remover.addActionListener(this::bt_removerActionPerformed);
 
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_voltar.setForeground(new java.awt.Color(102, 0, 102));
         bt_voltar.setText("Voltar");
         bt_voltar.addActionListener(this::bt_voltarActionPerformed);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel1.setText("Seu conteúdo, do seu jeito");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,33 +207,37 @@ public class TelaGerenciarListas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_classificacao)
-                            .addComponent(lbl_genero)
-                            .addComponent(lbl_nome)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lbl_escolhaLista1)
                             .addComponent(txt_nomeLista, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_escolhaLista)
-                            .addComponent(lbl_resultado)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(46, 46, 46)
-                                        .addComponent(bt_adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(bt_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txt_nomeVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_nomeVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(bt_buscarVideo))))
+                                .addComponent(bt_buscarVideo))
+                            .addComponent(lbl_resultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbl_nome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbl_genero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbl_classificacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
+                        .addGap(161, 161, 161)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(bt_adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81)
+                        .addComponent(bt_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
                         .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addComponent(lbl_escolhaLista)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_nomeLista, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,7 +246,7 @@ public class TelaGerenciarListas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(bt_buscarVideo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_nomeVideo, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+                    .addComponent(txt_nomeVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_resultado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -243,9 +259,9 @@ public class TelaGerenciarListas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                .addGap(26, 26, 26)
                 .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -303,6 +319,7 @@ public class TelaGerenciarListas extends javax.swing.JFrame {
     private javax.swing.JButton bt_buscarVideo;
     private javax.swing.JButton bt_remover;
     private javax.swing.JButton bt_voltar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_classificacao;
     private javax.swing.JLabel lbl_escolhaLista;
     private javax.swing.JLabel lbl_escolhaLista1;

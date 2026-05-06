@@ -24,6 +24,7 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
     public AlteracaoUsuario(Usuario usuario) {
         initComponents();
         setLocationRelativeTo(null); //aparece no meio
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
 
         lbl_nome.setText(usuario.getNome());
         c = new ControleAlteracao(this, usuario);
@@ -80,21 +81,25 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
         lbl_nome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Alterar Senha ");
 
         lbl_senhaNova.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_senhaNova.setForeground(new java.awt.Color(0, 0, 255));
+        lbl_senhaNova.setForeground(new java.awt.Color(102, 0, 102));
         lbl_senhaNova.setText("Informe sua nova senha:");
 
+        bt_alterar.setBackground(new java.awt.Color(102, 0, 102));
         bt_alterar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_alterar.setForeground(new java.awt.Color(255, 0, 153));
+        bt_alterar.setForeground(new java.awt.Color(255, 255, 255));
         bt_alterar.setText("Alterar");
         bt_alterar.addActionListener(this::bt_alterarActionPerformed);
 
         bt_voltarLogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_voltarLogin.setForeground(new java.awt.Color(102, 0, 102));
         bt_voltarLogin.setText("Voltar");
         bt_voltarLogin.addActionListener(this::bt_voltarLoginActionPerformed);
 
         lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lbl_nome.setForeground(new java.awt.Color(255, 255, 255));
         lbl_nome.setText("NOME");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -104,36 +109,36 @@ public class AlteracaoUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bt_voltarLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bt_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(79, 79, 79)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(bt_voltarLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bt_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txt_senhaNova, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(83, 83, 83)
-                                .addComponent(lbl_senhaNova))
-                            .addComponent(txt_senhaNova, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lbl_senhaNova))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
+                        .addGap(214, 214, 214)
                         .addComponent(lbl_nome)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(55, 55, 55)
                 .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(43, 43, 43)
                 .addComponent(lbl_senhaNova)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt_senhaNova, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(bt_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addComponent(bt_voltarLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         pack();

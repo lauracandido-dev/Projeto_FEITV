@@ -9,19 +9,21 @@ package model;
  * @author candi
  */
 public class Video {
-    private String nomeVideo, genero, classificacao, sinopse;
+    private String nomeVideo, genero, classificacao, sinopse, tipo;
     private int id;
 
     public Video() {
     }
 
     
-    public Video(String nomeVideo, String genero, String classificacao, String sinopse, int id) {
+    public Video(String nomeVideo, String genero, String classificacao, 
+            String sinopse, int id, String tipo) {
         this.nomeVideo = nomeVideo;
         this.genero = genero;
         this.classificacao = classificacao;
         this.sinopse = sinopse;
         this.id = id;
+        this.tipo = tipo;
     }
 
 
@@ -63,6 +65,14 @@ public class Video {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     

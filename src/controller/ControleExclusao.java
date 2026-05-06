@@ -12,13 +12,12 @@ import view.ExclusaoUsuario;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-
 /**
  *
  * @author candi
  */
 public class ControleExclusao {
-    
+
     private ExclusaoUsuario tela5;
     private Usuario usuario;
 
@@ -26,22 +25,32 @@ public class ControleExclusao {
         this.tela5 = tela5;
         this.usuario = usuario;
     }
-    
-    public void remover(){
-        int option = JOptionPane.showConfirmDialog(tela5, 
-                "Você realmente deseja excluir o cadastro?");
-        
-        if(option != 1){
+
+    public void remover() {
+        int option = JOptionPane.showConfirmDialog(
+                tela5,
+                "Você realmente deseja excluir o cadastro?",
+                "Confirmação",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        if (option == JOptionPane.YES_OPTION) {
             Conexao conexao = new Conexao();
-            try{
+            try {
                 Connection conn = conexao.getConnection();
                 UsuDAO dao = new UsuDAO(conn);
                 dao.remover(usuario);
-                JOptionPane.showMessageDialog(tela5, "Usuario removido", 
-                        "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            }catch(SQLException e){
-                JOptionPane.showMessageDialog(tela5, "Falha na conexão",
-                        "Erro", JOptionPane.ERROR_MESSAGE);
+
+                JOptionPane.showMessageDialog(tela5,
+                        "Usuário removido!",
+                        "Sucesso",
+                        JOptionPane.INFORMATION_MESSAGE);
+                        tela5.dispose();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(tela5,
+                        "Falha na conexão",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
     }

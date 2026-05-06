@@ -25,6 +25,8 @@ public class TelaExcluirLista extends javax.swing.JFrame {
     public TelaExcluirLista(Usuario usuario) {
         initComponents();
         setLocationRelativeTo(null);
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
+
         c = new ControleExcluirLista(this, usuario);
     }
 
@@ -75,21 +77,29 @@ public class TelaExcluirLista extends javax.swing.JFrame {
         txt_listaExcluir = new javax.swing.JTextField();
         bt_deletarLista = new javax.swing.JButton();
         bt_voltarLista = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Excluir Lista");
 
         lbl_nomeListaExcluir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_nomeListaExcluir.setForeground(new java.awt.Color(51, 0, 255));
+        lbl_nomeListaExcluir.setForeground(new java.awt.Color(102, 0, 102));
         lbl_nomeListaExcluir.setText("Insira o nome da lista que você deseja excluir:");
 
+        bt_deletarLista.setBackground(new java.awt.Color(102, 0, 102));
         bt_deletarLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_deletarLista.setForeground(new java.awt.Color(255, 0, 51));
+        bt_deletarLista.setForeground(new java.awt.Color(255, 255, 255));
         bt_deletarLista.setText("Deletar Lista");
         bt_deletarLista.addActionListener(this::bt_deletarListaActionPerformed);
 
         bt_voltarLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_voltarLista.setForeground(new java.awt.Color(102, 0, 102));
         bt_voltarLista.setText("Voltar");
         bt_voltarLista.addActionListener(this::bt_voltarListaActionPerformed);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel1.setText("Lembre-se: Essa ação não pode ser desfeita");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,13 +116,18 @@ public class TelaExcluirLista extends javax.swing.JFrame {
                         .addGap(142, 142, 142)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bt_voltarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bt_deletarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(bt_deletarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(jLabel1)))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(108, 108, 108)
+                .addGap(61, 61, 61)
+                .addComponent(jLabel1)
+                .addGap(47, 47, 47)
                 .addComponent(lbl_nomeListaExcluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt_listaExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,7 +135,7 @@ public class TelaExcluirLista extends javax.swing.JFrame {
                 .addComponent(bt_deletarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(bt_voltarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         pack();
@@ -166,6 +181,7 @@ public class TelaExcluirLista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_deletarLista;
     private javax.swing.JButton bt_voltarLista;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_nomeListaExcluir;
     private javax.swing.JTextField txt_listaExcluir;
     // End of variables declaration//GEN-END:variables

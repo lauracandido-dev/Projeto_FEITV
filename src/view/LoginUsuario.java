@@ -23,6 +23,7 @@ public class LoginUsuario extends javax.swing.JFrame {
     
     public LoginUsuario() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
         setLocationRelativeTo(null); //aparece no meio
         
         c = new ControleLogin(this);
@@ -102,62 +103,128 @@ public class LoginUsuario extends javax.swing.JFrame {
         bt_login = new javax.swing.JButton();
         bt_cadastrar = new javax.swing.JButton();
         lbl_pgtCadastro = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
+        setBackground(new java.awt.Color(0, 0, 0));
 
         lbl_usuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_usuario.setForeground(new java.awt.Color(255, 255, 255));
         lbl_usuario.setText("Usuário:");
 
         txt_usuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txt_usuario.addActionListener(this::txt_usuarioActionPerformed);
 
         lbl_senha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_senha.setForeground(new java.awt.Color(255, 255, 255));
         lbl_senha.setText("Senha:");
 
         txt_senha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txt_senha.addActionListener(this::txt_senhaActionPerformed);
 
-        bt_login.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_login.setForeground(new java.awt.Color(255, 0, 102));
+        bt_login.setBackground(new java.awt.Color(102, 0, 102));
+        bt_login.setFont(new java.awt.Font("Modern No. 20", 1, 18)); // NOI18N
+        bt_login.setForeground(new java.awt.Color(255, 255, 255));
         bt_login.setText("Login");
         bt_login.addActionListener(this::bt_loginActionPerformed);
 
-        bt_cadastrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_cadastrar.setFont(new java.awt.Font("Modern No. 20", 1, 18)); // NOI18N
+        bt_cadastrar.setForeground(new java.awt.Color(102, 0, 102));
         bt_cadastrar.setText("Cadastrar");
         bt_cadastrar.addActionListener(this::bt_cadastrarActionPerformed);
 
         lbl_pgtCadastro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_pgtCadastro.setForeground(new java.awt.Color(0, 0, 204));
+        lbl_pgtCadastro.setForeground(new java.awt.Color(153, 0, 153));
         lbl_pgtCadastro.setText("Ainda não tem cadastro?");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel1.setText("Login");
+
+        jPanel1.setBackground(new java.awt.Color(102, 0, 102));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Seu entretenimento começa aqui.");
+
+        jLabel3.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Bem -Vindo(a) ao FEITV!");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Entre com seus dados corretamente para acessar o sistema!");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel3)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_pgtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(190, 190, 190))
             .addGroup(layout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbl_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(123, 123, 123)
+                            .addComponent(jLabel1)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_pgtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
+                .addGap(53, 53, 53)
+                .addComponent(jLabel1)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -167,11 +234,11 @@ public class LoginUsuario extends javax.swing.JFrame {
                     .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(bt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addGap(62, 62, 62)
                 .addComponent(lbl_pgtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         pack();
@@ -194,6 +261,7 @@ public class LoginUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         CadastroUsuario cad = new CadastroUsuario();
         cad.setVisible(true);
+        this.dispose(); //para fechar a tela atual
     }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     /**
@@ -227,6 +295,11 @@ public class LoginUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastrar;
     private javax.swing.JButton bt_login;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_pgtCadastro;
     private javax.swing.JLabel lbl_senha;
     private javax.swing.JLabel lbl_usuario;

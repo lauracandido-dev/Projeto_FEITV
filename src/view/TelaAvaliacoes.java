@@ -28,6 +28,7 @@ public class TelaAvaliacoes extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); //aparece no meio
         this.usuario = usuario;
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
         
         c = new ControleAvaliacao(this, usuario); 
 
@@ -110,8 +111,10 @@ public class TelaAvaliacoes extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Avaliações dos Vídeos");
 
         lbl_nomeVideo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_nomeVideo.setForeground(new java.awt.Color(102, 0, 102));
         lbl_nomeVideo.setText("Busque o nome do vídeo que deseja curtir/descurtir:");
 
         txt_buscarVideo.addActionListener(this::txt_buscarVideoActionPerformed);
@@ -129,11 +132,14 @@ public class TelaAvaliacoes extends javax.swing.JFrame {
         bt_descurtir.setText("Descurtir");
         bt_descurtir.addActionListener(this::bt_descurtirActionPerformed);
 
+        bt_buscar.setBackground(new java.awt.Color(102, 0, 102));
         bt_buscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_buscar.setForeground(new java.awt.Color(255, 255, 255));
         bt_buscar.setText("Buscar");
         bt_buscar.addActionListener(this::bt_buscarActionPerformed);
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(102, 0, 102));
         jButton1.setText("Voltar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 

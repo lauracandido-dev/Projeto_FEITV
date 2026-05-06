@@ -22,6 +22,8 @@ public class TelaListaReproducao extends javax.swing.JFrame {
     public TelaListaReproducao(Usuario usuario) {
         initComponents();
         setLocationRelativeTo(null);
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
+
         this.usuario = usuario;
     }
 
@@ -104,27 +106,33 @@ public class TelaListaReproducao extends javax.swing.JFrame {
         setTitle("Listas de Reprodução");
 
         lbl_escolhaLista.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lbl_escolhaLista.setForeground(new java.awt.Color(255, 0, 153));
+        lbl_escolhaLista.setForeground(new java.awt.Color(102, 0, 102));
         lbl_escolhaLista.setText("Escolha o que você gostaria de fazer:");
 
         bt_criarLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_criarLista.setForeground(new java.awt.Color(102, 0, 102));
         bt_criarLista.setText("Criar uma Lista de Reprodução");
         bt_criarLista.addActionListener(this::bt_criarListaActionPerformed);
 
         bt_editarLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_editarLista.setForeground(new java.awt.Color(102, 0, 102));
         bt_editarLista.setText("Editar sua Lista de Reprodução");
         bt_editarLista.addActionListener(this::bt_editarListaActionPerformed);
 
         bt_gerenciarVideos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_gerenciarVideos.setForeground(new java.awt.Color(102, 0, 102));
         bt_gerenciarVideos.setText("Adicionar/remover vídeo");
         bt_gerenciarVideos.addActionListener(this::bt_gerenciarVideosActionPerformed);
 
+        bt_excluirLista.setBackground(new java.awt.Color(102, 0, 102));
         bt_excluirLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_excluirLista.setText("Excluir uma Lista de Reprodução");
+        bt_excluirLista.setForeground(new java.awt.Color(255, 255, 255));
+        bt_excluirLista.setText("Excluir sua Lista de Reprodução");
         bt_excluirLista.addActionListener(this::bt_excluirListaActionPerformed);
 
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_voltar.setText("Voltar");
+        bt_voltar.setForeground(new java.awt.Color(102, 0, 102));
+        bt_voltar.setText("Voltar para a tela anterior");
         bt_voltar.addActionListener(this::bt_voltarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

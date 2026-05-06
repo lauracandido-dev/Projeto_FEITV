@@ -27,6 +27,8 @@ public class TelaAtualizarLista extends javax.swing.JFrame {
     public TelaAtualizarLista(Usuario usuario) {
         initComponents();
         setLocationRelativeTo(null);
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
+
         c = new ControleEditarLista(this, usuario);
     }
 
@@ -99,22 +101,25 @@ public class TelaAtualizarLista extends javax.swing.JFrame {
         txt_antigoNome = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Altrerar Nome da Lista");
 
         lbl_novoNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_novoNome.setForeground(new java.awt.Color(51, 0, 255));
+        lbl_novoNome.setForeground(new java.awt.Color(102, 0, 102));
         lbl_novoNome.setText("Informe o novo nome da sua lista:");
 
+        bt_alterarNome.setBackground(new java.awt.Color(102, 0, 102));
         bt_alterarNome.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_alterarNome.setForeground(new java.awt.Color(255, 0, 102));
+        bt_alterarNome.setForeground(new java.awt.Color(255, 255, 255));
         bt_alterarNome.setText("Alterar nome da lista");
         bt_alterarNome.addActionListener(this::bt_alterarNomeActionPerformed);
 
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_voltar.setForeground(new java.awt.Color(102, 0, 102));
         bt_voltar.setText("Voltar");
         bt_voltar.addActionListener(this::bt_voltarActionPerformed);
 
         lbl_antigoNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_antigoNome.setForeground(new java.awt.Color(51, 0, 255));
+        lbl_antigoNome.setForeground(new java.awt.Color(102, 0, 102));
         lbl_antigoNome.setText("Informe o nome da lista que deseja alterar o nome: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

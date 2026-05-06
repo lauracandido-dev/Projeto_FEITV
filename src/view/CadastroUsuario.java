@@ -24,6 +24,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
     public CadastroUsuario() {
         initComponents();
         setLocationRelativeTo(null); //aparece no meio
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
 
         c = new ControleCadastro(this);
     }
@@ -105,16 +106,20 @@ public class CadastroUsuario extends javax.swing.JFrame {
         txt_senha = new javax.swing.JTextField();
         lbl_senha = new javax.swing.JLabel();
         bt_cadastro = new javax.swing.JButton();
-        bt_cadastro1 = new javax.swing.JButton();
+        bt_voltar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cadastro");
 
         lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_nome.setForeground(new java.awt.Color(255, 255, 255));
         lbl_nome.setText("Nome:");
 
         txt_nome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         lbl_usuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_usuario.setForeground(new java.awt.Color(255, 255, 255));
         lbl_usuario.setText("Usuário:");
 
         txt_usuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -122,16 +127,23 @@ public class CadastroUsuario extends javax.swing.JFrame {
         txt_senha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         lbl_senha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_senha.setForeground(new java.awt.Color(255, 255, 255));
         lbl_senha.setText("Senha:");
 
-        bt_cadastro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_cadastro.setForeground(new java.awt.Color(255, 0, 102));
+        bt_cadastro.setBackground(new java.awt.Color(102, 0, 102));
+        bt_cadastro.setFont(new java.awt.Font("Modern No. 20", 1, 18)); // NOI18N
+        bt_cadastro.setForeground(new java.awt.Color(255, 255, 255));
         bt_cadastro.setText("Cadastrar");
         bt_cadastro.addActionListener(this::bt_cadastroActionPerformed);
 
-        bt_cadastro1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bt_cadastro1.setText("Voltar");
-        bt_cadastro1.addActionListener(this::bt_cadastro1ActionPerformed);
+        bt_voltar.setFont(new java.awt.Font("Modern No. 20", 1, 18)); // NOI18N
+        bt_voltar.setForeground(new java.awt.Color(102, 0, 102));
+        bt_voltar.setText("Voltar");
+        bt_voltar.addActionListener(this::bt_voltarActionPerformed);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Para realizar seu cadastro precisamos de algumas informações");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,10 +152,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(93, 93, 93)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -155,15 +163,25 @@ public class CadastroUsuario extends javax.swing.JFrame {
                             .addComponent(txt_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(bt_cadastro1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(bt_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(21, 21, 21)))))
-                .addContainerGap(170, Short.MAX_VALUE))
+                                .addGap(21, 21, 21))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(128, 128, 128)
+                .addGap(61, 61, 61)
+                .addComponent(jLabel1)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -178,8 +196,8 @@ public class CadastroUsuario extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(bt_cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(bt_cadastro1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -190,10 +208,12 @@ public class CadastroUsuario extends javax.swing.JFrame {
         c.salvarUsuario();
     }//GEN-LAST:event_bt_cadastroActionPerformed
 
-    private void bt_cadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastro1ActionPerformed
+    private void bt_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_bt_cadastro1ActionPerformed
+        LoginUsuario telaLogin = new LoginUsuario();
+        telaLogin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_bt_voltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,7 +245,8 @@ public class CadastroUsuario extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastro;
-    private javax.swing.JButton bt_cadastro1;
+    private javax.swing.JButton bt_voltar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_nome;
     private javax.swing.JLabel lbl_senha;
     private javax.swing.JLabel lbl_usuario;

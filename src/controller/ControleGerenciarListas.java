@@ -32,6 +32,12 @@ public class ControleGerenciarListas {
     public void buscarVideo() {
         String nomeVideo = tela12.getTxt_nomeVideo().getText();
 
+        tela12.getLbl_nome().setText("");
+        tela12.getLbl_genero().setText("");
+        tela12.getLbl_classificacao().setText("");
+        tela12.getLbl_resultado().setText("");
+        
+        
         if (nomeVideo.isEmpty()) {
             JOptionPane.showMessageDialog(tela12, "Digite o nome do vídeo!");
             return;

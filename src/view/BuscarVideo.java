@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import model.Usuario;
 import controller.ControleBuscar;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 
 /**
@@ -29,6 +30,7 @@ public class BuscarVideo extends javax.swing.JFrame {
     public BuscarVideo(Usuario usuario) {
         initComponents();
         setLocationRelativeTo(null); //aparece no meio
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
 
         this.c = new ControleBuscar(this);
     }
@@ -99,13 +101,17 @@ public class BuscarVideo extends javax.swing.JFrame {
         this.lbl_nome = lbl_nome;
     }
 
-    public JLabel getLbl_sinopse() {
-        return lbl_sinopse;
+
+
+    public JTextArea getTxtA_Sinopse() {
+        return txtA_Sinopse;
     }
 
-    public void setLbl_sinopse(JLabel lbl_sinopse) {
-        this.lbl_sinopse = lbl_sinopse;
+    public void setTxtA_Sinopse(JTextArea txtA_Sinopse) {
+        this.txtA_Sinopse = txtA_Sinopse;
     }
+
+    
 
     public JTextField getTxt_buscar() {
         return txt_buscar;
@@ -114,6 +120,15 @@ public class BuscarVideo extends javax.swing.JFrame {
     public void setTxt_buscar(JTextField txt_buscar) {
         this.txt_buscar = txt_buscar;
     }
+
+    public JLabel getLbl_infos() {
+        return lbl_infos;
+    }
+
+    public void setLbl_infos(JLabel lbl_infos) {
+        this.lbl_infos = lbl_infos;
+    }
+
 
 
     
@@ -132,84 +147,104 @@ public class BuscarVideo extends javax.swing.JFrame {
         lbl_nome = new javax.swing.JLabel();
         lbl_genero = new javax.swing.JLabel();
         lbl_classificacao = new javax.swing.JLabel();
-        lbl_sinopse = new javax.swing.JLabel();
         bt_buscar = new javax.swing.JButton();
         txt_buscar = new javax.swing.JTextField();
         bt_voltar = new javax.swing.JButton();
         lbl_buscar1 = new javax.swing.JLabel();
+        lbl_infos = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtA_Sinopse = new javax.swing.JTextArea();
+        lbl_buscar2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Buscar Vídeos");
+        setBackground(new java.awt.Color(204, 204, 204));
 
-        lbl_buscar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lbl_buscar.setForeground(new java.awt.Color(255, 0, 153));
+        lbl_buscar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_buscar.setForeground(new java.awt.Color(102, 0, 102));
         lbl_buscar.setText("Digite o nome do vídeo que deseja buscar:");
 
-        lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_nome.setText(" ");
 
-        lbl_genero.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_genero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_genero.setText(" ");
 
-        lbl_classificacao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_classificacao.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_classificacao.setText(" ");
 
-        lbl_sinopse.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl_sinopse.setText(" ");
-
+        bt_buscar.setBackground(new java.awt.Color(102, 0, 102));
         bt_buscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_buscar.setForeground(new java.awt.Color(255, 0, 51));
+        bt_buscar.setForeground(new java.awt.Color(255, 255, 255));
         bt_buscar.setText("Buscar");
         bt_buscar.addActionListener(this::bt_buscarActionPerformed);
 
         txt_buscar.addActionListener(this::txt_buscarActionPerformed);
 
         bt_voltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_voltar.setForeground(new java.awt.Color(102, 0, 102));
         bt_voltar.setText("Voltar");
         bt_voltar.addActionListener(this::bt_voltarActionPerformed);
 
-        lbl_buscar1.setForeground(new java.awt.Color(51, 0, 255));
+        lbl_buscar1.setForeground(new java.awt.Color(102, 0, 102));
         lbl_buscar1.setText("As informações do vídeo irão aparecer abaixo");
+
+        lbl_infos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_infos.setText(" ");
+
+        txtA_Sinopse.setColumns(20);
+        txtA_Sinopse.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtA_Sinopse.setRows(5);
+        jScrollPane1.setViewportView(txtA_Sinopse);
+
+        lbl_buscar2.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        lbl_buscar2.setForeground(new java.awt.Color(102, 0, 102));
+        lbl_buscar2.setText("Encontre seus filmes e séries favoritos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_buscar1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lbl_buscar)
-                        .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(5, 5, 5)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(81, 81, 81)
-                                            .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
+                                .addComponent(lbl_genero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbl_nome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbl_classificacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbl_infos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_buscar1)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lbl_sinopse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lbl_genero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lbl_nome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lbl_classificacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                            .addComponent(bt_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(37, Short.MAX_VALUE))
+                                        .addComponent(lbl_buscar)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                            .addComponent(bt_buscar)))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(lbl_buscar2)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(31, 31, 31)
+                .addComponent(lbl_buscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addComponent(lbl_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(bt_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(txt_buscar))
+                    .addComponent(bt_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(2, 2, 2)
                 .addComponent(lbl_buscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -218,11 +253,13 @@ public class BuscarVideo extends javax.swing.JFrame {
                 .addComponent(lbl_genero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(lbl_classificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addComponent(lbl_sinopse, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_infos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
                 .addComponent(bt_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -272,12 +309,15 @@ public class BuscarVideo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_buscar;
     private javax.swing.JButton bt_voltar;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_buscar;
     private javax.swing.JLabel lbl_buscar1;
+    private javax.swing.JLabel lbl_buscar2;
     private javax.swing.JLabel lbl_classificacao;
     private javax.swing.JLabel lbl_genero;
+    private javax.swing.JLabel lbl_infos;
     private javax.swing.JLabel lbl_nome;
-    private javax.swing.JLabel lbl_sinopse;
+    private javax.swing.JTextArea txtA_Sinopse;
     private javax.swing.JTextField txt_buscar;
     // End of variables declaration//GEN-END:variables
 }

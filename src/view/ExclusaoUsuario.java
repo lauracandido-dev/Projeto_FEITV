@@ -23,6 +23,7 @@ public class ExclusaoUsuario extends javax.swing.JFrame {
     public ExclusaoUsuario(Usuario usuario) {
         initComponents();
         setLocationRelativeTo(null); //aparece no meio
+        getContentPane().setBackground(new java.awt.Color(216, 181, 230)); // Mudar cor
 
         lbl_nome.setText(usuario.getNome());
         c = new ControleExclusao(this, usuario);
@@ -77,19 +78,24 @@ public class ExclusaoUsuario extends javax.swing.JFrame {
         bt_voltarLogado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Excluir Usuário");
 
         lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lbl_nome.setForeground(new java.awt.Color(255, 255, 255));
         lbl_nome.setText("NOME");
 
         lbl_pgtExcluir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_pgtExcluir.setForeground(new java.awt.Color(0, 0, 255));
+        lbl_pgtExcluir.setForeground(new java.awt.Color(102, 0, 102));
         lbl_pgtExcluir.setText("Deseja realmente excluir o seu cadastro?");
 
+        bt_excluirPerfil.setBackground(new java.awt.Color(102, 0, 102));
         bt_excluirPerfil.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_excluirPerfil.setForeground(new java.awt.Color(255, 255, 255));
         bt_excluirPerfil.setText("Excluir");
         bt_excluirPerfil.addActionListener(this::bt_excluirPerfilActionPerformed);
 
         bt_voltarLogado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_voltarLogado.setForeground(new java.awt.Color(102, 0, 102));
         bt_voltarLogado.setText("Voltar");
         bt_voltarLogado.addActionListener(this::bt_voltarLogadoActionPerformed);
 

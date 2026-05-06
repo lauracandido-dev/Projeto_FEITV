@@ -3,15 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/dao/ListaReproducaoDAO.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/model/ListaReproducao.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/TelaListaReproducao.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/controller/ControleExcluirLista.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/TelaExcluirLista.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/TelaGerenciarListas.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/controller/ControleGerenciarListas.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/dao/VideoDAO.java</file>
-            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/controller/ControleBuscar.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/LoginUsuario.java</file>
+            <file>file:/C:/Users/candi/OneDrive/Documentos/NetBeansProjects/Projeto/src/view/CadastroUsuario.java</file>
         </group>
     </open-files>
 </project-private>

@@ -56,6 +56,7 @@ public class ControleEditarLista {
             dao.atualizarNome(lista.getId(), novoNome);
 
             JOptionPane.showMessageDialog(tela10, "Nome da lista atualizado com sucesso!");
+            tela10.dispose();
 
         } catch (SQLException e) {
             e.printStackTrace();

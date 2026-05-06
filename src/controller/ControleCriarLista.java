@@ -53,6 +53,7 @@ public class ControleCriarLista {
 
             tela9.getTxt_nomeLista().setText("");
             tela9.getTxt_descricaoLista().setText("");
+            tela9.dispose();
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(tela9, "Erro ao criar lista!");
