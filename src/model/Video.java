@@ -8,7 +8,7 @@ package model;
  *
  * @author candi
  */
-public class Video {
+public abstract class Video {
     private String nomeVideo, genero, classificacao, sinopse, tipo;
     private int id;
 

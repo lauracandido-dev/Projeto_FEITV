@@ -45,7 +45,7 @@ public class ControleAvaliacao {
         try {
             Connection conn = conexao.getConnection();
 
-            Video video = new Video(); //cria o obj video
+            Video video = new Video() {}; 
             video.setNomeVideo(nome);
 
             AvaliacoesDAO dao = new AvaliacoesDAO(conn); //chama o DAO
