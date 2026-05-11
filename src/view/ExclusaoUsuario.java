@@ -82,6 +82,7 @@ public class ExclusaoUsuario extends javax.swing.JFrame {
 
         lbl_nome.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lbl_nome.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_nome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_nome.setText("NOME");
 
         lbl_pgtExcluir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -114,16 +115,16 @@ public class ExclusaoUsuario extends javax.swing.JFrame {
                             .addComponent(bt_voltarLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bt_excluirPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addComponent(lbl_nome)))
+                        .addGap(140, 140, 140)
+                        .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(57, 57, 57)
                 .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(31, 31, 31)
                 .addComponent(lbl_pgtExcluir)
                 .addGap(39, 39, 39)
                 .addComponent(bt_excluirPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)

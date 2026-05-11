@@ -206,6 +206,11 @@ public class CadastroUsuario extends javax.swing.JFrame {
     private void bt_cadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastroActionPerformed
         // TODO add your handling code here:
         c.salvarUsuario();
+            // abre a tela de login
+        LoginUsuario telaLogin = new LoginUsuario();
+        telaLogin.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_bt_cadastroActionPerformed
 
     private void bt_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarActionPerformed

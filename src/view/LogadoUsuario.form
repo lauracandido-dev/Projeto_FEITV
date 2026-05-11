@@ -41,6 +41,10 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
+                      <Component id="lbl_escolhas" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="bt_buscar" max="32767" attributes="0"/>
@@ -49,17 +53,13 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
-                      <Component id="lbl_escolhas" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lbl_escolhas1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="lbl_bemVindo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lbl_nome" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="lbl_nome" min="-2" pref="260" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -78,9 +78,9 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lbl_escolhas" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="lbl_escolhas1" min="-2" pref="40" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="bt_buscar" min="-2" pref="49" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="bt_listar" min="-2" pref="49" max="-2" attributes="0"/>

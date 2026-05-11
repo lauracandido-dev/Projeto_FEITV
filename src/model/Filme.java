@@ -18,7 +18,9 @@ public class Filme extends Video {
         this.duracao = duracao;
     }
 
-    public Filme(int duracao, String nomeVideo, String genero, String classificacao, String sinopse, int id, String tipo) {
+    public Filme(int duracao, String nomeVideo, 
+            String genero, String classificacao, 
+            String sinopse, int id, String tipo) {
         super(nomeVideo, genero, classificacao, sinopse, id, tipo);
         this.duracao = duracao;
     }

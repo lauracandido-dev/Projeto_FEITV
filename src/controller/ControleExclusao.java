@@ -11,6 +11,7 @@ import model.Usuario;
 import view.ExclusaoUsuario;
 import java.sql.Connection;
 import java.sql.SQLException;
+import view.LogadoUsuario;
 
 /**
  *
@@ -45,10 +46,13 @@ public class ControleExclusao {
                         "Usuário removido!",
                         "Sucesso",
                         JOptionPane.INFORMATION_MESSAGE);
-                        tela5.dispose();
+                tela5.dispose();
+                System.exit(0);
             } catch (SQLException e) {
+                e.printStackTrace();
+
                 JOptionPane.showMessageDialog(tela5,
-                        "Falha na conexão",
+                        e.getMessage(),
                         "Erro",
                         JOptionPane.ERROR_MESSAGE);
             }

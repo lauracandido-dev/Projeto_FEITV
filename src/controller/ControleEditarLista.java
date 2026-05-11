@@ -44,7 +44,6 @@ public class ControleEditarLista {
 
             ListaReproducaoDAO dao = new ListaReproducaoDAO(conn);
 
-            // 🔍 buscar lista pelo nome + usuário
             ListaReproducao lista = dao.buscarPorNomeEUsuario(nomeAtual, usuario.getId());
 
             if (lista == null) {
@@ -52,7 +51,6 @@ public class ControleEditarLista {
                 return;
             }
 
-            // ✏️ atualizar nome
             dao.atualizarNome(lista.getId(), novoNome);
 
             JOptionPane.showMessageDialog(tela10, "Nome da lista atualizado com sucesso!");

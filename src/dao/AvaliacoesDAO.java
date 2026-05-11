@@ -51,7 +51,6 @@ public class AvaliacoesDAO {
 
         } else {
 
-            // ➕ INSERT
             String sqlInsert = "INSERT INTO avaliacoes (usuario_id, video_id, avaliacao) VALUES (?, ?, ?)";
 
             PreparedStatement insert = conn.prepareStatement(sqlInsert);

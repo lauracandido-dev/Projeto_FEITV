@@ -273,6 +273,7 @@ public class BuscarVideo extends javax.swing.JFrame {
     private void bt_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_voltarActionPerformed
         // TODO add your handling code here:
         this.dispose();
+
     }//GEN-LAST:event_bt_voltarActionPerformed
 
     private void txt_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_buscarActionPerformed

@@ -191,22 +191,22 @@ public class LogadoUsuario extends javax.swing.JFrame {
                             .addComponent(bt_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bt_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(194, 194, 194)
+                        .addComponent(lbl_escolhas))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(142, 142, 142)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(bt_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(bt_listar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(bt_curtirDescurtir, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(lbl_escolhas))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(149, 149, 149)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_escolhas1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_bemVindo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(lbl_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -218,9 +218,9 @@ public class LogadoUsuario extends javax.swing.JFrame {
                     .addComponent(lbl_nome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_escolhas)
-                .addGap(27, 27, 27)
+                .addGap(30, 30, 30)
                 .addComponent(lbl_escolhas1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bt_listar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,19 +249,22 @@ public class LogadoUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         TelaAvaliacoes tela7 = new TelaAvaliacoes(usuario);
         tela7.setVisible(true);
+
     }//GEN-LAST:event_bt_listarActionPerformed
 
     private void bt_curtirDescurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_curtirDescurtirActionPerformed
         // TODO add your handling code here:]
         TelaListaReproducao tela8 = new TelaListaReproducao(usuario);
         tela8.setVisible(true);
+
     }//GEN-LAST:event_bt_curtirDescurtirActionPerformed
 
     private void bt_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_alterarActionPerformed
         // TODO add your handling code here:
         Usuario usuario = c.chamarAlteracao();
         AlteracaoUsuario altUsu = new AlteracaoUsuario(usuario);
-        altUsu.setVisible(true);    
+        altUsu.setVisible(true); 
+
     }//GEN-LAST:event_bt_alterarActionPerformed
 
     private void bt_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluirActionPerformed
@@ -269,6 +272,7 @@ public class LogadoUsuario extends javax.swing.JFrame {
         Usuario usuario = c.chamarExclusao();
         ExclusaoUsuario excUsu = new ExclusaoUsuario(usuario);
         excUsu.setVisible(true);
+
     }//GEN-LAST:event_bt_excluirActionPerformed
 
     /**
