@@ -167,9 +167,6 @@ O projeto me permitiu aplicar diversos conceitos importantes e ainda despertou a
 ## Autora
 - Laura Candido da Silva 
 
-## Repositório GitHub
-- https://github.com/lauracandido-dev/Projeto_FEITV.git
-
 ## Link Vídeo
 - https://drive.google.com/file/d/1laejtsG22kueKRCbV8klJRI-lmQ9030V/view?usp=sharing
 
